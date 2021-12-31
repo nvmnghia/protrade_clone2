@@ -33,3 +33,18 @@
 #ceil > span:last-child {
   color: #ff25ff;
 }
+
+
+/********************************************************************************
+ * Table selector
+ ********************************************************************************/
+
+#table-selector {
+  display: flex;
+}
+
+#table-selector > * {
+  flex: 1;
+  text-align: center;
+  line-height: 30px;
+}
