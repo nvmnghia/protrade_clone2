@@ -49,6 +49,14 @@
   line-height: 30px;
 }
 
+#table-selector > * {
+  cursor: pointer;
+}
+
+.table-selected {
+  color: #f7941d;
+}
+
 
 /********************************************************************************
  * Price step table
