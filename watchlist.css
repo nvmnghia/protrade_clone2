@@ -1,0 +1,23 @@
+i.fa-caret-left:hover,
+i.fa-caret-right:hover {
+  cursor: pointer;
+}
+
+th > span {
+  display: inline-block;
+  text-align: center;
+  min-width: 16px;
+}
+
+.positive {
+  color: lime;
+}
+
+.negative {
+  color: red;
+}
+
+/* TODO: do this in SASS, as it is .gray-tr */
+tr:nth-child(even) {
+  background-color: #3a3d49;
+}

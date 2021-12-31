@@ -2,21 +2,10 @@ const rand = Math.random;
 const round = Math.round;
 const floor = Math.floor;
 
-
-/********************************************************************************
- * History chart
- ********************************************************************************/
-
-let priceStepTable = null;
-let selectPriceStepTable = null;
-
-let tradingHistoryTable = null;
-let selectTradingHistoryTable = null;
-
 /**
  *  Base class to control table.
  */
-class Table {
+ class Table {
 
     /**
      * Instantiate the table with a <table> element.
@@ -82,6 +71,17 @@ class Table {
         this.rendered = true;
     }
 }
+
+
+/********************************************************************************
+ * History chart
+ ********************************************************************************/
+
+let priceStepTable = null;
+let selectPriceStepTable = null;
+
+let tradingHistoryTable = null;
+let selectTradingHistoryTable = null;
 
 /**
  * Concrete class for Price Step table.
@@ -222,9 +222,107 @@ function setupHistoryPanel() {
 
 
 /********************************************************************************
+ * Watchlist table
+ ********************************************************************************/
+
+function formatRelative(actual, reference) {
+    const relative = actual * 100 / reference;
+    return `${relative.toFixed(2)}%`;
+}
+
+class WatchListTable extends Table {
+    constructor(tableElement) {
+        super(tableElement);
+        this.relativeDiff = false;
+    }
+
+    generateData() {
+        const generateCell = () => [
+            'VN30F2201', rand() * 2000, rand() * 10 - 5, rand() * 10 - 5, round(rand() * 1000)
+        ]
+
+        return Array.from({ length: rand() * 5 + 3 }, generateCell);
+    }
+
+    formatData(rowData) {
+        rowData = [...rowData];
+
+        rowData[1] = rowData[1].toFixed(1);
+        rowData[2] = this.relativeDiff ?
+            window.formatRelative(rowData[2], rowData[1]) : rowData[2].toFixed(1);
+        rowData[3] = rowData[3].toFixed(1);
+
+        return rowData;
+    }
+
+    renderRow(rowData) {
+        const row = this.rowTemplate.content.cloneNode(true);
+        const cell = cellNum => row.querySelector(`td:nth-child(${cellNum})`);    // 1-based cellNum
+
+        const actualDiff = rowData[2];
+        rowData = this.formatData(rowData);
+
+        for (let i = 0; i < rowData.length; i++) {
+            cell(i + 1).textContent = rowData[i];
+        }
+
+        // Update color to match value sign
+        updateColorValue(cell(2));
+        updateColorValue(cell(3));
+
+        // Save actual diff to data-, so that subsequent changes in display style
+        // can use this correct value, instead of the rounded display value.
+        cell(2).dataset.actualDiff = actualDiff;
+
+        this.tableBody.appendChild(row);
+
+        function updateColorValue(element) {
+            if (element.textContent.startsWith('-')) {
+                element.classList.remove('positive');
+                element.classList.add('negative');
+            } else {
+                element.classList.remove('negative');
+                element.classList.add('positive');
+            }
+        }
+    }
+
+    toggleRelativeDiff() {
+        this.relativeDiff = !this.relativeDiff;
+
+        // Change the header
+        const diffHead = this.table.querySelector('th:nth-child(3) > span');
+        diffHead.textContent = this.relativeDiff ? '%' : '+/-';
+
+        const rows = this.table.querySelectorAll('tbody > tr');
+        rows.forEach(row => {
+            let price = row.querySelector('td:nth-child(2)');
+            price = parseFloat(price.textContent);
+            const val = row.querySelector('td:nth-child(3)');
+
+            if (this.relativeDiff) {
+                val.textContent = window.formatRelative(parseFloat(val.textContent), price)
+            } else {
+                val.textContent = parseFloat(val.dataset.actualDiff).toFixed(1);
+            }
+        }, this);
+    }
+}
+
+function setupWatchlistTable() {
+    const watchListTable = new WatchListTable(document.getElementById('watchlist-table'));
+
+    const toggleRelativeDiff = watchListTable.toggleRelativeDiff.bind(watchListTable);
+    document.querySelector('i.fa-caret-left').onclick  = toggleRelativeDiff;
+    document.querySelector('i.fa-caret-right').onclick = toggleRelativeDiff;
+}
+
+
+/********************************************************************************
  * Main
  ********************************************************************************/
 
 window.onload = () => {
     setupHistoryPanel();
+    setupWatchlistTable();
 }
