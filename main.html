@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title>Main</title>
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="history.css" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -70,11 +71,11 @@
                 <td><span></span></td>
                 <td style="position: relative">
                   <span></span>
-                  <div class="price-step-cell-bg" style="right: 0;"></div>
+                  <div class="price-step-cell-bg" style="right: 0"></div>
                 </td>
                 <td style="position: relative">
                   <span></span>
-                  <div class="price-step-cell-bg" style="left: 0;"></div>
+                  <div class="price-step-cell-bg" style="left: 0"></div>
                 </td>
                 <td><span></span></td>
               </tr>
@@ -82,7 +83,7 @@
           </table>
 
           <!-- Trading history table -->
-          <table id="trading-history-table" style="display: none;">
+          <table id="trading-history-table" style="display: none">
             <thead>
               <tr>
                 <th scope="col">Time</th>
@@ -92,8 +93,7 @@
                 <th scope="col">Agg</th>
               </tr>
             </thead>
-            <tbody>
-            </tbody>
+            <tbody></tbody>
 
             <!-- Row template -->
             <template>
@@ -107,7 +107,43 @@
             </template>
           </table>
         </div>
-        <div id="watchlist">Watchlist</div>
+        <div id="watchlist">
+          <table id="watchlist-table">
+            <colgroup>
+              <col width="25%" />
+              <col width="18%" />
+              <col width="16%" />
+              <col width="16%" />
+              <col width="25%" />
+            </colgroup>
+
+            <thead>
+              <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Price</th>
+                <th scope="col">
+                  <i class="fa-solid fa-caret-left"></i>
+                  <span>+/-</span>
+                  <i class="fa-solid fa-caret-right"></i>
+                </th>
+                <th scope="col">Spread</th>
+                <th scope="col">Total Qty</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+
+            <!-- Row template -->
+            <template>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </template>
+          </table>
+        </div>
       </div>
       <div class="col3">
         <div id="orderbook">Orderbook</div>
