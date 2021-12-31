@@ -16,6 +16,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #2f3240;
 }
 
 .container {
