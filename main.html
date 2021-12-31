@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="history.css" />
     <link rel="stylesheet" href="watchlist.css" />
+    <link rel="stylesheet" href="orderbook.css" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
   </head>
   <body class="column-layout">
@@ -147,7 +148,56 @@
         </div>
       </div>
       <div class="col3">
-        <div id="orderbook">Orderbook</div>
+        <div id="orderbook">
+          <div id="panel-title">
+            <!-- Refresh or close the panel -->
+            <div id="panel-control">
+              <i class="fa-solid fa-rotate"></i>
+              <i class="fa-solid fa-minus"></i>
+            </div>
+
+            <div id="panel-title-content">
+              <!-- TODO: change #table-selector-2 to class
+                to avoid collision and duplication with the above #table-selector -->
+              <div id="table-selector-2">
+                <a id="day-order" class="table-selected">Day order</a>
+                <a id="conditional-order">Conditional order</a>
+              </div>
+            </div>
+          </div>
+
+          <div id="panel-content">
+            <!-- Day order table -->
+            <table id="day-order-table">
+              <thead>
+                <tr>
+                  <th scope="col">Order</th>
+                  <th scope="col">Symbol</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">WTF</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+
+            <!-- Conditional order table -->
+            <table id="conditional-order-table" style="display: none;">
+              <thead>
+                <tr>
+                  <th scope="col">Order</th>
+                  <th scope="col">Symbol</th>
+                  <th scope="col">Trigger Price</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Expiration Date</th>
+                  <th scope="col">WTF</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
         <div id="placeorder">Place Order</div>
       </div>
     </div>

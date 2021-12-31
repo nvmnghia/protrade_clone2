@@ -1,0 +1,37 @@
+/********************************************************************************
+ * Panel title bar
+ ********************************************************************************/
+
+#panel-title {
+  display: flex;
+  align-items: center;
+}
+
+#panel-title-content {
+  order: -1;
+  flex: 1;
+}
+
+#panel-control > * {
+  margin-right: 10px;
+}
+
+
+/********************************************************************************
+ * Table selector
+ ********************************************************************************/
+
+#table-selector-2 {
+  display: flex;
+}
+
+#table-selector-2 > * {
+  flex: 1;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.table-selected {
+  color: #f7941d;
+}

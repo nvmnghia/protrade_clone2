@@ -198,7 +198,7 @@ class TradingHistoryTable extends Table {
     }
 }
 
-function toggleTable(event) {
+function toggleHistoryPanelTables(event) {
     if (event.target.classList.contains('table-selected')) {
         return;
     }
@@ -213,11 +213,11 @@ function toggleTable(event) {
 function setupHistoryPanel() {
     priceStepTable = new PriceStepTable(document.querySelector('#price-step-table'));
     selectPriceStepTable = document.querySelector('#price-step');
-    selectPriceStepTable.onclick = toggleTable;
+    selectPriceStepTable.onclick = toggleHistoryPanelTables;
 
     tradingHistoryTable = new TradingHistoryTable(document.querySelector('#trading-history-table'));
     selectTradingHistoryTable = document.querySelector('#trading-history');
-    selectTradingHistoryTable.onclick = toggleTable;
+    selectTradingHistoryTable.onclick = toggleHistoryPanelTables;
 }
 
 
@@ -319,10 +319,44 @@ function setupWatchlistTable() {
 
 
 /********************************************************************************
+ * Orderbook panel
+ ********************************************************************************/
+
+let selectDayOrderTable = null;
+let dayOrderTable = null;
+
+let selectConditionalOrderTable = null;
+let conditionalOrderTable = null;
+
+function toggleOrderbookPanelTables(event) {
+    if (event.target.classList.contains('table-selected')) {
+        return;
+    }
+
+    selectDayOrderTable.classList.toggle('table-selected');
+    selectConditionalOrderTable.classList.toggle('table-selected');
+
+    dayOrderTable.toggle();
+    conditionalOrderTable.toggle();
+}
+
+function setupOrderbookPanel() {
+    dayOrderTable = new Table(document.getElementById('day-order-table'));
+    selectDayOrderTable = document.getElementById('day-order');
+    selectDayOrderTable.onclick = toggleOrderbookPanelTables;
+
+    conditionalOrderTable = new Table(document.getElementById('conditional-order-table'));
+    selectConditionalOrderTable = document.getElementById('conditional-order');
+    selectConditionalOrderTable.onclick = toggleOrderbookPanelTables;
+}
+
+
+/********************************************************************************
  * Main
  ********************************************************************************/
 
 window.onload = () => {
     setupHistoryPanel();
     setupWatchlistTable();
+    setupOrderbookPanel();
 }
