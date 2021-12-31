@@ -58,3 +58,25 @@ body {
 #orderbook, #placeorder {
   flex: 1;
 }
+
+
+/********************************************************************************
+ * Table
+ ********************************************************************************/
+
+.gray-tr {
+  background-color: #3a3d49;
+}
+
+table {
+  width: 100%;
+}
+
+table * {
+  text-align: center;
+}
+
+thead {
+  color: #ccc;
+  background-color: hsla(0,0%,47.1%,.15);
+}

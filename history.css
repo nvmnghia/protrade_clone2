@@ -48,3 +48,31 @@
   text-align: center;
   line-height: 30px;
 }
+
+
+/********************************************************************************
+ * Price step table
+ ********************************************************************************/
+
+#price-step-table th:nth-child(2), #price-step-table td:nth-child(2),
+#price-step-table th:nth-child(3), #price-step-table td:nth-child(3) {
+  width: 35%;
+}
+
+#price-step-table th:nth-child(1), #price-step-table td:nth-child(1),
+#price-step-table th:nth-child(4), #price-step-table td:nth-child(4) {
+  width: 15%;
+}
+
+#price-step-table td:nth-child(2) > span, #price-step-table td:nth-child(3) > span {
+  color: red;
+}
+
+.price-step-cell-bg {
+  background-color: rgb(247, 148, 29);
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}

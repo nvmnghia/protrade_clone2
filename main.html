@@ -51,6 +51,35 @@
             <a id="price-step" class="table-selected">Price step</a>
             <a id="trading-history">Trading history</a>
           </div>
+
+          <!-- Price step table -->
+          <table id="price-step-table">
+            <thead>
+              <tr>
+                <th id="buy-quantity" scope="col">Buy Qty</th>
+                <th id="buy-price" scope="col">Buy Price</th>
+                <th id="sell-price" scope="col">Sell Price</th>
+                <th id="sell-quantity" scope="col">Sell Qty</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+
+            <!-- Row template -->
+            <template>
+              <tr>
+                <td><span></span></td>
+                <td style="position: relative">
+                  <span></span>
+                  <div class="price-step-cell-bg" style="right: 0;"></div>
+                </td>
+                <td style="position: relative">
+                  <span></span>
+                  <div class="price-step-cell-bg" style="left: 0;"></div>
+                </td>
+                <td><span></span></td>
+              </tr>
+            </template>
+          </table>
         </div>
         <div id="watchlist">Watchlist</div>
       </div>
