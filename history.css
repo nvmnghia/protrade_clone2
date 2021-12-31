@@ -1,0 +1,86 @@
+/********************************************************************************
+ * Summary
+ ********************************************************************************/
+
+#summary {
+  display: flex;
+}
+
+#summary > * {
+  padding-right: 15px;
+}
+
+#futures {
+  flex: 1;
+
+  /* Center text vertically */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#floor > span:last-child {
+  color: #00c5c5;
+}
+
+#reference > span:last-child {
+  color: #ffd900;
+}
+
+#ceil > span:last-child {
+  color: #ff25ff;
+}
+
+
+/********************************************************************************
+ * Table selector
+ ********************************************************************************/
+
+#table-selector {
+  display: flex;
+}
+
+#table-selector > * {
+  flex: 1;
+  text-align: center;
+  line-height: 30px;
+}
+
+#table-selector > * {
+  cursor: pointer;
+}
+
+.table-selected {
+  color: #f7941d;
+}
+
+
+/********************************************************************************
+ * Price step table
+ ********************************************************************************/
+
+#price-step-table th:nth-child(2), #price-step-table td:nth-child(2),
+#price-step-table th:nth-child(3), #price-step-table td:nth-child(3) {
+  width: 35%;
+}
+
+#price-step-table th:nth-child(1), #price-step-table td:nth-child(1),
+#price-step-table th:nth-child(4), #price-step-table td:nth-child(4) {
+  width: 15%;
+}
+
+#price-step-table td:nth-child(2) > span, #price-step-table td:nth-child(3) > span {
+  color: red;
+}
+
+.price-step-cell-bg {
+  background-color: rgb(247, 148, 29);
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}

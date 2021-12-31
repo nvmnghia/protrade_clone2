@@ -2,18 +2,111 @@
 <html lang="en">
   <head>
     <title>Main</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="history.css" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
   </head>
   <body class="column-layout">
     <header>Header is here</header>
     <div class="container">
       <div class="col1">
-        <iframe id="chart" title="Chart" src="https://dchart.vndirect.com.vn/charting_library/static/en-tv-chart.aaac22e21df68f2f7bad.html#symbol=VN30F1M&interval=1&widgetbar=%7B%22details%22%3Afalse%2C%22watchlist%22%3Afalse%2C%22watchlist_settings%22%3A%7B%22default_symbols%22%3A%5B%5D%7D%7D&timeFrames=%5B%7B%22text%22%3A%225y%22%2C%22resolution%22%3A%22W%22%7D%2C%7B%22text%22%3A%221y%22%2C%22resolution%22%3A%22W%22%7D%2C%7B%22text%22%3A%223m%22%2C%22resolution%22%3A%22D%22%7D%2C%7B%22text%22%3A%221m%22%2C%22resolution%22%3A%22D%22%7D%2C%7B%22text%22%3A%225d%22%2C%22resolution%22%3A%225%22%7D%2C%7B%22text%22%3A%221d%22%2C%22resolution%22%3A%221%22%7D%5D&locale=en&uid=tradingview_ebc5f&clientId=vnds_trading_view&userId=vnds-0001542070&chartsStorageUrl=https%3A%2F%2Fchart-api.vndirect.com.vn&chartsStorageVer=1.1&debug=false&timezone=Asia%2FBangkok&ssreqdelay=400&theme=Dark"></iframe>
-        <iframe id="market" title="Market" src="https://mkw.vndirect.com.vn/leader_lagger?color=gray"></iframe>
+        <!-- Main chart, currently not rendered due to CORS? -->
+        <iframe
+          id="chart"
+          title="Chart"
+          src="https://dchart.vndirect.com.vn/charting_library/static/en-tv-chart.aaac22e21df68f2f7bad.html#symbol=VN30F1M&interval=1&widgetbar=%7B%22details%22%3Afalse%2C%22watchlist%22%3Afalse%2C%22watchlist_settings%22%3A%7B%22default_symbols%22%3A%5B%5D%7D%7D&timeFrames=%5B%7B%22text%22%3A%225y%22%2C%22resolution%22%3A%22W%22%7D%2C%7B%22text%22%3A%221y%22%2C%22resolution%22%3A%22W%22%7D%2C%7B%22text%22%3A%223m%22%2C%22resolution%22%3A%22D%22%7D%2C%7B%22text%22%3A%221m%22%2C%22resolution%22%3A%22D%22%7D%2C%7B%22text%22%3A%225d%22%2C%22resolution%22%3A%225%22%7D%2C%7B%22text%22%3A%221d%22%2C%22resolution%22%3A%221%22%7D%5D&locale=en&uid=tradingview_ebc5f&clientId=vnds_trading_view&userId=vnds-0001542070&chartsStorageUrl=https%3A%2F%2Fchart-api.vndirect.com.vn&chartsStorageVer=1.1&debug=false&timezone=Asia%2FBangkok&ssreqdelay=400&theme=Dark"
+        ></iframe>
+
+        <!-- Market chart -->
+        <iframe
+          id="market"
+          title="Market"
+          src="https://mkw.vndirect.com.vn/leader_lagger?color=gray"
+        ></iframe>
       </div>
       <div class="col2">
-        <div id="history">History</div>
+        <div id="history">
+          <!-- Summary -->
+          <div id="summary">
+            <div id="futures">VN30F2201</div>
+            <div id="floor">
+              <span>Floor:</span>
+              <br />
+              <span>1400</span>
+            </div>
+            <div id="reference">
+              <span>Reference:</span>
+              <br />
+              <span>1500</span>
+            </div>
+            <div id="ceil">
+              <span>Ceil:</span>
+              <br />
+              <span>1600</span>
+            </div>
+          </div>
+
+          <!-- Table selector, might use nav&tab -->
+          <div id="table-selector">
+            <a id="price-step" class="table-selected">Price step</a>
+            <a id="trading-history">Trading history</a>
+          </div>
+
+          <!-- Price step table -->
+          <table id="price-step-table">
+            <thead>
+              <tr>
+                <th id="buy-quantity" scope="col">Buy Qty</th>
+                <th id="buy-price" scope="col">Buy Price</th>
+                <th id="sell-price" scope="col">Sell Price</th>
+                <th id="sell-quantity" scope="col">Sell Qty</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+
+            <!-- Row template -->
+            <template>
+              <tr>
+                <td><span></span></td>
+                <td style="position: relative">
+                  <span></span>
+                  <div class="price-step-cell-bg" style="right: 0;"></div>
+                </td>
+                <td style="position: relative">
+                  <span></span>
+                  <div class="price-step-cell-bg" style="left: 0;"></div>
+                </td>
+                <td><span></span></td>
+              </tr>
+            </template>
+          </table>
+
+          <!-- Trading history table -->
+          <table id="trading-history-table" style="display: none;">
+            <thead>
+              <tr>
+                <th scope="col">Time</th>
+                <th scope="col">Price</th>
+                <th scope="col">+/-</th>
+                <th scope="col">Qty</th>
+                <th scope="col">Agg</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+
+            <!-- Row template -->
+            <template>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </template>
+          </table>
+        </div>
         <div id="watchlist">Watchlist</div>
       </div>
       <div class="col3">
@@ -21,5 +114,7 @@
         <div id="placeorder">Place Order</div>
       </div>
     </div>
+
+    <script src="main.js"></script>
   </body>
 </html>
