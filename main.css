@@ -8,7 +8,6 @@
 
   font-family: sans-serif;
   font-size: 13px;
-  color: white;
 }
 
 
@@ -20,7 +19,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #2f3240;
 }
 
 .container {
@@ -61,6 +59,23 @@ body {
 
 #orderbook {
   flex: 1;
+}
+
+
+/********************************************************************************
+ * Colors
+ ********************************************************************************/
+
+* {
+  color: white;
+}
+
+body {
+  background-color: rgb(16, 19, 26);
+}
+
+.col1 > *, .col2 > *, .col3 > * {
+  background-color: #2f3240;
 }
 
 
