@@ -35,3 +35,27 @@
 .table-selected {
   color: #f7941d;
 }
+
+
+/********************************************************************************
+ * Day Order table
+ ********************************************************************************/
+
+#day-order-table th:nth-child(1), #day-order-table td:nth-child(1) { width:  7%; }
+#day-order-table th:nth-child(2), #day-order-table td:nth-child(2) { width: 17%; }
+#day-order-table th:nth-child(3), #day-order-table td:nth-child(3) { width: 31%; }
+#day-order-table th:nth-child(4), #day-order-table td:nth-child(4) { width: 24%; }
+#day-order-table th:nth-child(5), #day-order-table td:nth-child(5) { width: 21%; }
+
+
+/********************************************************************************
+ * Conditional Order table
+ ********************************************************************************/
+
+#conditional-order-table th:nth-child(1), #conditional-order-table td:nth-child(1) { width: 12%; }
+#conditional-order-table th:nth-child(2), #conditional-order-table td:nth-child(2) { width: 17%; }
+#conditional-order-table th:nth-child(3), #conditional-order-table td:nth-child(3) { width: 17%; }
+#conditional-order-table th:nth-child(4), #conditional-order-table td:nth-child(4) { width: 12%; }
+#conditional-order-table th:nth-child(5), #conditional-order-table td:nth-child(5) { width: 12%; }
+#conditional-order-table th:nth-child(6), #conditional-order-table td:nth-child(6) { width: 20%; }
+#conditional-order-table th:nth-child(7), #conditional-order-table td:nth-child(7) { width: 10%; }
