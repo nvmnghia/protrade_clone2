@@ -108,6 +108,29 @@ tr {
 
 
 /********************************************************************************
+ * Table selector
+ * A tab-like layout to select a table among many
+ * TODO: replace this with BS tab
+ ********************************************************************************/
+
+.table-selector {
+  display: flex;
+}
+
+.table-selector > * {
+  flex: 1;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.table-selected {
+  color: #f7941d;
+  font-weight: 700;
+}
+
+
+/********************************************************************************
  * Utils
  ********************************************************************************/
 
