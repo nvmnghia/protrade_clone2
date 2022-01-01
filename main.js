@@ -352,6 +352,56 @@ function setupOrderbookPanel() {
 
 
 /********************************************************************************
+ * Place Order panel
+ ********************************************************************************/
+
+function preventReloadBuySell() {
+    const prevent = event => event.preventDefault();
+    document.querySelectorAll('#placeorder form')
+        .forEach(form => form.addEventListener('submit', prevent));
+}
+
+/**
+ * Given a change event of a radio for a form, toggle that form.
+ *
+ * @param {Event} radioEvent Change event of the radio
+ */
+function togglePlaceOrderForms(radioEvent) {
+    const radio = radioEvent.target;
+    const formID = `${radio.id}-form`;
+
+    document.querySelectorAll(`form:not(#${formID})`)
+        .forEach(form => form.style.display = 'none');
+
+    document.getElementById(formID).style.display = 'block';
+}
+
+function setupPlaceOrderFormRadios() {
+    document.getElementById('normal-order').onchange = togglePlaceOrderForms;
+    document.getElementById('stop-order').onchange = togglePlaceOrderForms;
+}
+
+function setupPlaceOrderErrorBanner() {
+    const banner = document.getElementById('error-banner');
+
+    const hideErrorBanner = () => banner.style.display = 'none';
+    document.getElementById('normal-order').addEventListener('change', hideErrorBanner);
+    document.getElementById('stop-order').addEventListener('change', hideErrorBanner);
+
+    const showErrorBanner = () => banner.style.display = 'block';
+    document.querySelector('label[for=trailing-order]').addEventListener('click', showErrorBanner);    // Radios are disabled anyway
+    document.querySelector('label[for=oso-order]').addEventListener('click', showErrorBanner);         // So click handlers are on labels
+    document.querySelectorAll('form').forEach(form => form.addEventListener('submit', showErrorBanner));
+}
+
+function setupPlaceOrderPanel() {
+    preventReloadBuySell();
+    setupPlaceOrderFormRadios();
+    setupPlaceOrderErrorBanner();
+}
+
+
+/********************************************************************************
  * Main
  ********************************************************************************/
 
@@ -359,4 +409,5 @@ window.onload = () => {
     setupHistoryPanel();
     setupWatchlistTable();
     setupOrderbookPanel();
+    setupPlaceOrderPanel();
 }

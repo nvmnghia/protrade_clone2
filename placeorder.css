@@ -1,0 +1,127 @@
+#error-banner {
+  display: none;
+  text-align: center;
+  color: red;
+  margin: 5px 0;
+}
+
+.order-type {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/********************************************************************************
+ * General forms
+ ********************************************************************************/
+
+/* White background already, so text must be black */
+select, option, input {
+  color: initial;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+}
+
+.form-row > label {
+  width: 30%;
+}
+
+.form-row > input, .form-row > select {
+  width: 70%;
+}
+
+.form-row > input[type=checkbox] {
+  width: auto;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+input:not([type=radio]), select, option {
+  height: 30px;
+  border-radius: 3px;
+  outline: none;
+}
+
+label { line-height: 30px; }
+
+#error-banner {
+  display: none;
+  text-align: center;
+  color: red;
+  margin: 5px 0;
+}
+
+
+/********************************************************************************
+ * Stop order form
+ ********************************************************************************/
+
+#trigger-condition {
+  width: 70%;
+  display: flex;
+}
+
+#trigger-price {
+  flex: 1;
+  margin-left: 10px;
+}
+
+#price-stop {
+  text-transform: uppercase;
+}
+
+#price-lower, #price-higher {
+  display: none;
+}
+
+#price-lower + label, #price-higher + label {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 6px;
+
+  line-height: 30px;
+  text-align: center;
+
+  cursor: pointer;
+
+  border: 1px solid white;
+  border-radius: 3px;
+}
+
+#price-lower:checked + label, #price-higher:checked + label {
+  background-color: #f7941d;
+}
+
+
+/********************************************************************************
+ * Buy/Sell buttons
+ ********************************************************************************/
+
+button {
+  min-width: 110px;
+  height: 30px;
+
+  font-weight: 700;
+  font-size: 14px;
+
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+button[value=buy] {
+  background-color: green;
+}
+
+button[value=sell] {
+  background-color: red;
+}
