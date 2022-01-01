@@ -4,10 +4,13 @@
 
 #summary {
   display: flex;
+
+  border-bottom: 1px solid #444;
 }
 
 #summary > * {
-  padding-right: 15px;
+  padding: 5px;
+  margin-right: 15px;
 }
 
 #futures {
@@ -47,14 +50,12 @@
   flex: 1;
   text-align: center;
   line-height: 30px;
-}
-
-#table-selector > * {
   cursor: pointer;
 }
 
 .table-selected {
   color: #f7941d;
+  font-weight: 700;
 }
 
 
@@ -74,6 +75,15 @@
 
 #price-step-table td:nth-child(2) > span, #price-step-table td:nth-child(3) > span {
   color: red;
+}
+
+#price-step-table > tbody > tr {
+  border-bottom: 1px solid #444;
+}
+
+/* TODO: merge this border with the above one; #summary also uses this */
+#price-step-table th:nth-child(2), #price-step-table td:nth-child(2) {
+  border-right: 1px solid #444;
 }
 
 .price-step-cell-bg {

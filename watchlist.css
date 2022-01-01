@@ -18,6 +18,6 @@ th > span {
 }
 
 /* TODO: do this in SASS, as it is .gray-tr */
-tr:nth-child(even) {
+#watchlist tr:nth-child(even) {
   background-color: #3a3d49;
 }
