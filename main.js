@@ -272,7 +272,7 @@ class WatchListTable extends Table {
 
         // Save actual diff to data-, so that subsequent changes in display style
         // can use this correct value, instead of the rounded display value.
-        cell(2).dataset.actualDiff = actualDiff;
+        cell(3).dataset.actualDiff = actualDiff;
 
         this.tableBody.appendChild(row);
 
