@@ -55,24 +55,50 @@ header nav {
 }
 
 header ul {
-  padding: 20px;
+  padding-left: 20px;
   display: flex;    /* No space for inline-block li items */
 }
 
 header li {
   display: inline-block;    /* Horizontal list */
+  border-collapse: collapse;
   font-weight: 700;
   border-left: 1px solid #444;
   line-height: 20px;
 }
 
+header li:last-child {
+  border-right: 1px solid #444;
+}
+
 header li a {
-  text-decoration: none;
   margin: 0 10px;
 }
 
 .nav-selected {
   color: #f7941d;
+}
+
+
+/********************************************************************************
+ * Profit/Loss
+ ********************************************************************************/
+
+#profit-loss-value {
+  margin-right: 20px;
+}
+
+#profit-loss-value span:first-child {
+  color: #f7941d;
+}
+
+#profit-loss-value span:last-child {
+  color: #ffd900;
+  font-size: 15px;
+}
+
+#derivative-masters {
+  background-color: #97037f;
 }
 
 

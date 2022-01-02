@@ -14,6 +14,14 @@ table {
   border-collapse: collapse;
 }
 
+a {
+  text-decoration: none;
+}
+
+iframe {
+  border: 0;
+}
+
 
 /********************************************************************************
  * Layout
@@ -153,11 +161,10 @@ tr {
   display: block;
 }
 
-
-/********************************************************************************
- * Mics
- ********************************************************************************/
-
-iframe {
-  border: 0;
+/* tag instead of label to avoid ... */
+.tag {
+  border-radius: 3px;
+  line-height: 20px;
+  display: inline-block;
+  padding: 0 10px;
 }
