@@ -1,0 +1,55 @@
+/********************************************************************************
+ * Basic layout
+ ********************************************************************************/
+
+header {
+  display: flex;
+
+  height: 42px;
+}
+
+header > * {
+  padding: 0 10px;
+}
+
+header > div {
+  /* Header image fits, header content takes the rest */
+  flex: 1;
+
+  /* Vertical center text */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+header > a {
+  display: block;
+  height: 100%;
+  width: 200px;
+}
+
+img {
+  max-height: 100%;
+}
+
+
+/********************************************************************************
+ * Navigation
+ ********************************************************************************/
+
+header nav {
+  margin-right: 20px;
+}
+
+header nav li {
+  display: inline-block;
+}
+
+
+/********************************************************************************
+ * Account menu
+ ********************************************************************************/
+
+#account-menu {
+  margin-left: auto;
+}

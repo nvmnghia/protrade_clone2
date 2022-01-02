@@ -4,6 +4,7 @@
     <title>Main</title>
     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="header.css" />
     <link rel="stylesheet" href="history.css" />
     <link rel="stylesheet" href="watchlist.css" />
     <link rel="stylesheet" href="orderbook.css" />
@@ -11,7 +12,60 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
   </head>
   <body class="column-layout">
-    <header>Header is here</header>
+    <header>
+      <img src="assets/pt_trial.a0934fd1.svg" alt="logo">
+
+      <!-- Header content -->
+      <div>
+        <!-- Header clock -->
+        <div id="vn-clock">
+          <span id="vn-date">10:10:10</span>
+          <span id="vn-time">2022/2/2</span>
+        </div>
+
+        <!-- Navigation -->
+        <nav>
+          <ul>
+            <li>
+              <a href="/main.html">Main page</a>
+            </li>
+            <li>
+              <a href="/assets.html">Assets</a>
+            </li>
+            <li>
+              <a href="/guide.html">Guide</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Profit - Loss -->
+        <div id="profit-loss">
+          <span id="profit-loss-value">
+            <span>Profit/Loss:</span>
+            <span>0</span>
+          </span>
+
+          <span id="derivative-master" class="badge"><!-- TODO: implement .badge -->
+            <a href="/derivative-master.html">
+              <i class="fa-solid fa-trophy"></i>
+              Derivative Master
+            </a>
+          </span>
+        </div>
+
+        <!-- Account menu -->
+        <div id="account-menu">
+          <span>TRIAL VERSION</span>
+          <span>
+            <a href="/upgrade.html">
+              <i class="fa-solid fa-user"></i>
+              Upgrade Account
+            </a>
+          </span>
+          <span id="my-account"></span>
+        </div>
+      </div>
+    </header>
     <div class="container">
       <div class="col1">
         <!-- Main chart, currently not rendered due to CORS? -->
