@@ -139,6 +139,20 @@ tr {
   margin-bottom: 10px;
 }
 
+/* drop-down instead of dropdown to avoid collision with BS down the line */
+.drop-down {
+  position: relative;
+}
+
+.drop-down > .drop-down-menu {
+  position: absolute;
+  display: none;
+}
+
+.drop-down:hover > .drop-down-menu {
+  display: block;
+}
+
 
 /********************************************************************************
  * Mics

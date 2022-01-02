@@ -52,4 +52,5 @@ header nav li {
 
 #account-menu {
   margin-left: auto;
+  display: flex;
 }
