@@ -74,6 +74,38 @@ const floor = Math.floor;
 
 
 /********************************************************************************
+ * Header
+ ********************************************************************************/
+
+function setupClock() {
+    const locale   = 'vi';
+    const timeZone = 'Asia/Ho_Chi_Minh';
+
+    const timeOptions = {
+        timeZone,
+        hour:   '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+    };
+    const timeNode = document.getElementById('vn-time');
+    const tick = () => timeNode.textContent = new Date().toLocaleTimeString(locale, timeOptions);
+    tick();
+    setInterval(tick, 1000);
+
+    const dateOptions = {
+        timeZone,
+        year:  'numeric',
+        month: '2-digit',
+        day:   '2-digit'
+    }
+    const dateNode = document.getElementById('vn-date');
+    const newDay = () => dateNode.textContent = new Date().toLocaleDateString(locale, dateOptions);
+    newDay();
+    setInterval(newDay, 1000 * 60 * 60 * 24);
+}
+
+
+/********************************************************************************
  * History chart
  ********************************************************************************/
 
@@ -406,6 +438,7 @@ function setupPlaceOrderPanel() {
  ********************************************************************************/
 
 window.onload = () => {
+    setupClock();
     setupHistoryPanel();
     setupWatchlistTable();
     setupOrderbookPanel();
