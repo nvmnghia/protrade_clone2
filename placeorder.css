@@ -1,3 +1,7 @@
+#placeorder {
+  padding: 10px;
+}
+
 #error-banner {
   display: none;
   text-align: center;
@@ -45,18 +49,11 @@ select, option, input {
 
 input:not([type=radio]), select, option {
   height: 30px;
-  border-radius: 3px;
+  border-radius: 4px;
   outline: none;
 }
 
 label { line-height: 30px; }
-
-#error-banner {
-  display: none;
-  text-align: center;
-  color: red;
-  margin: 5px 0;
-}
 
 
 /********************************************************************************
