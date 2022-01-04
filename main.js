@@ -176,7 +176,7 @@ let selectTradingHistoryTable = null;
             round(rand() * 100),
         ]
 
-        return Array.from({ length: rand() * 20 + 3 }, generateCell);
+        return Array.from({ length: rand() * 5 + 3 }, generateCell);
     }
 
     /**
@@ -239,7 +239,7 @@ class TradingHistoryTable extends Table {
             round(rand() * 10000)
         ];
 
-        return Array.from({ length: rand() * 20 }, generateCell);
+        return Array.from({ length: rand() * 5 }, generateCell);
     }
 
     formatData(rowData) {
@@ -504,12 +504,34 @@ function selectManagementPanels(event) {
     document.getElementById(contentID).style.display = 'flex';
 }
 
+function hideCol3() {
+    document.querySelector('.col3').classList.add('hidden');
+    document.getElementById('market-menu').classList.add('col3-hidden');
+    document.getElementById('watchlist').classList.add('col3-hidden');
+
+    document.querySelectorAll('footer > div')
+        .forEach(menuItem => menuItem.classList.remove('selected'));
+}
+
+function showCol3() {
+    document.querySelector('.col3').classList.remove('hidden');
+    document.getElementById('market-menu').classList.remove('col3-hidden');
+    document.getElementById('watchlist').classList.remove('col3-hidden');
+}
+
+function setupMinimizeCol3() {
+    document.getElementById('panel-minimize').onclick = hideCol3;
+    document.querySelectorAll('footer > div')
+        .forEach(menuItem => menuItem.addEventListener('click', showCol3));
+}
+
 function setupManagementMenu() {    // The footer tabs
     document.querySelectorAll('footer > div')
         .forEach(menuItem => menuItem.onclick = selectManagementPanels);
 }
 
 function setupManagementPanel() {
+    setupMinimizeCol3();
     setupOrderbookPanel();
     setupPortfolioPanel();
     setupManagementMenu();

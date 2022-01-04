@@ -168,6 +168,10 @@ tr {
   list-style: none;
 }
 
+.hidden {
+  display: none !important;
+}
+
 /* drop-down instead of dropdown to avoid collision with BS down the line */
 .drop-down {
   position: relative;

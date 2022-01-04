@@ -32,6 +32,7 @@ So #watchlist-table is used instead. */
 footer {
   display: flex;
   padding: 0 1px;
+  background-color: rgb(16, 19, 26);
 }
 
 footer > div {

@@ -12,8 +12,14 @@
   flex: 1;
 }
 
-#panel-control > * {
-  margin-right: 10px;
+#panel-control > i {
+  padding-right: 10px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+#panel-control > i:hover {
+  color: #f7941d;
 }
 
 
