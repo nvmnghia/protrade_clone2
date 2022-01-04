@@ -249,6 +249,13 @@
                 <a id="open-position" class="table-selected">Open Positions</a>
                 <a id="closing-position">Closing Positions</a>
               </div>
+
+              <div id="panel-title-assets" style="display: none;">
+                <a href="/assets-info">
+                  <span>Assets info</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -309,6 +316,25 @@
                     <th scope="col">Profit/Loss</th>
                   </tr>
                 </thead>
+              </table>
+            </div>
+
+            <div id="assets" style="display: none;">
+              <table id="assets-summary">
+                <tbody>
+                  <tr>
+                    <th scope="row">Net Worth</th>
+                    <td>12345678</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Margin</th>
+                    <td>12345678</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Tax & Fee</th>
+                    <td>12345678</td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </div>
@@ -449,6 +475,7 @@
     </div>
 
     <footer>
+      <!-- TODO: consistent naming scheme for selector & content -->
       <div>Orderbook</div>
       <div>Portfolio</div>
       <div>Assets</div>
