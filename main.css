@@ -152,12 +152,12 @@ tr {
   position: relative;
 }
 
-.drop-down > .drop-down-menu {
+.drop-down .drop-down-menu {
   position: absolute;
   display: none;
 }
 
-.drop-down:hover > .drop-down-menu {
+.drop-down:hover .drop-down-menu {
   display: block;
 }
 

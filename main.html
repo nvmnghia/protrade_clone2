@@ -56,21 +56,29 @@
         <!-- Account menu -->
         <div id="account-menu">
           <div>TRIAL VERSION</div>
-          <div>
+          <div id="upgrade-account" class="tag">
             <a href="/upgrade.html">Upgrade Account</a>
           </div>
 
           <div id="my-account" class="drop-down">
             <!-- Dropdown toggler -->
             <div class="drop-down-toggle">
-              <i class="fa-solid fa-user"></i>
-              <span id="user-fullname">Nguyễn Việt Minh Nghĩa</span>
-              <i class="fa-solid fa-caret-down"></i>
-            </div>
+              <span>
+                <i class="fa-solid fa-user"></i>
+                <span id="user-fullname">Nguyễn Việt Minh Nghĩa</span>
+                <i class="fa-solid fa-caret-down"></i>
+              </span>
 
-            <!-- Dropdown menu -->
-            <div class="drop-down-menu">
-              <a>Logout</a>
+              <!-- Dropdown menu -->
+              <!-- Menu INSIDE .drop-down-toggle to keep :hover state
+                   when the mouse move to the menu -->
+              <!-- TODO: decide on hover vs click and streamline everything -->
+              <ul class="drop-down-menu">
+                <li>
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  <a>Logout</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

@@ -59,7 +59,7 @@ header ul {
   display: flex;    /* No space for inline-block li items */
 }
 
-header li {
+header nav li {
   display: inline-block;    /* Horizontal list */
   border-collapse: collapse;
   font-weight: 700;
@@ -67,11 +67,11 @@ header li {
   line-height: 20px;
 }
 
-header li:last-child {
+header nav li:last-child {
   border-right: 1px solid #444;
 }
 
-header li a {
+header nav li a {
   margin: 0 10px;
 }
 
@@ -109,4 +109,54 @@ header li a {
 #account-menu {
   margin-left: auto;
   display: flex;
+  align-items: center;
+}
+
+#upgrade-account {
+  background-color: #f7941d;
+  margin: 0 20px;
+}
+
+#my-account {
+  cursor: pointer;
+  line-height: 42px;
+}
+
+#my-account .drop-down-toggle:hover > span {
+  display: inline-block;
+  height: 100%;
+}
+
+#my-account .drop-down-toggle:hover > span > * {
+  color: #f7941d;
+}
+
+#my-account .drop-down-toggle > span {
+  padding: 0 10px;
+}
+
+#my-account .drop-down-toggle > span:hover {
+  background-color: #2f3240;
+}
+
+#my-account .drop-down-menu {
+  right: 0;
+  /* Mouse usually moves to the center. Wider menu so when mouse move that way
+     the menu is still hoverable, and thus visible */
+  width: 125%;
+  background-color: rgb(16, 19, 26);
+  list-style: none;
+  padding: 0;
+}
+
+#my-account .drop-down-menu > li {
+  padding: 0 10px;
+}
+
+#my-account .drop-down-menu > li:hover > * {
+  color: #f7941d;
+}
+
+#user-fullname {
+  padding: 0 5px;
 }
