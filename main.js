@@ -421,7 +421,7 @@ function toggleOrderbookPanelTables(event) {
 }
 
 function setupOrderbookPanel() {
-    dayOrderTable = new Table(document.getElementById('day-order-table'));
+    dayOrderTable = new Table(document.getElementById('intraday-order-table'));
     selectDayOrderTable = document.getElementById('day-order');
     selectDayOrderTable.onclick = toggleOrderbookPanelTables;
 
