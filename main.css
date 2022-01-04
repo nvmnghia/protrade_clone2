@@ -44,8 +44,16 @@ body {
   width: 100%;
 }
 
-.col1, .col2, .col3 {
-  width: 100%;
+.col1 {
+  flex: 1;
+}
+
+.col2 {
+  width: 350px;
+}
+
+.col3 {
+  width: 400px;
 }
 
 /* Per-column layout */
@@ -69,6 +77,16 @@ body {
 /* Place Order panel fits to content, while Orderbook takes the rest */
 #orderbook {
   flex: 1;
+}
+
+/* TODO: consider fixed for mobile layout */
+footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+
+  width: 400px;
+  height: 30px;
 }
 
 
