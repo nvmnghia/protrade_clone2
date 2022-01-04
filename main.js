@@ -2,6 +2,9 @@ const rand = Math.random;
 const round = Math.round;
 const floor = Math.floor;
 
+const hide = element => element.classList.add('hidden');
+const show = element => element.classList.remove('hidden');
+
 /**
  *  Base class to control table.
  */
@@ -397,8 +400,8 @@ function setupWatchlistTable() {
  * Orderbook panel
  ********************************************************************************/
 
-let selectDayOrderTable = null;
-let dayOrderTable = null;
+let selectIntraDayOrderTable = null;
+let intradayOrderTable = null;
 
 let selectConditionalOrderTable = null;
 let conditionalOrderTable = null;
@@ -408,17 +411,17 @@ function toggleOrderbookPanelTables(event) {
         return;
     }
 
-    selectDayOrderTable.classList.toggle('table-selected');
+    selectIntraDayOrderTable.classList.toggle('table-selected');
     selectConditionalOrderTable.classList.toggle('table-selected');
 
-    dayOrderTable.toggle();
+    intradayOrderTable.toggle();
     conditionalOrderTable.toggle();
 }
 
 function setupOrderbookPanel() {
-    dayOrderTable = new Table(document.getElementById('intraday-order-table'));
-    selectDayOrderTable = document.getElementById('day-order');
-    selectDayOrderTable.onclick = toggleOrderbookPanelTables;
+    intradayOrderTable = new Table(document.getElementById('intraday-order-table'));
+    selectIntraDayOrderTable = document.getElementById('day-order');
+    selectIntraDayOrderTable.onclick = toggleOrderbookPanelTables;
 
     conditionalOrderTable = new Table(document.getElementById('conditional-order-table'));
     selectConditionalOrderTable = document.getElementById('conditional-order');
@@ -452,11 +455,11 @@ function togglePortfolioPanelTables(event) {
 function setupPortfolioPanel() {
     openPositionsTable = new Table(document.getElementById('open-positions-table'));
     selectOpenPositionsTable = document.getElementById('open-positions');
-    selectOpenPositionsTable.onclick = toggleOrderbookPanelTables;
+    selectOpenPositionsTable.onclick = togglePortfolioPanelTables;
 
     closingPositionsTable = new Table(document.getElementById('closing-positions-table'));
     selectClosingPositionsTable = document.getElementById('closing-positions');
-    selectClosingPositionsTable.onclick = toggleOrderbookPanelTables;
+    selectClosingPositionsTable.onclick = togglePortfolioPanelTables;
 }
 
 
@@ -490,26 +493,27 @@ function selectManagementPanels(event) {
     selected.classList.add('selected');
 
     for (const [_, target] of Object.entries(managementMenus)) {
-        document.getElementById(target.title).classList.add('hidden');
-        document.getElementById(target.content).classList.add('hidden');
+        hide(document.getElementById(target.title));
+        hide(document.getElementById(target.content));
     }
     const titleID   = managementMenus[selected.id].title;
-    document.getElementById(titleID).classList.remove('hidden');
+    show(document.getElementById(titleID));
     const contentID = managementMenus[selected.id].content;
-    document.getElementById(contentID).classList.remove('hidden');
+    show(document.getElementById(contentID));
 }
 
 function hideCol3() {
-    document.querySelector('.col3').classList.add('hidden');
+    hide(document.querySelector('.col3'));
     document.getElementById('market-menu').classList.add('col3-hidden');
     document.getElementById('watchlist').classList.add('col3-hidden');
 
+    // Clear selected menu item
     document.querySelectorAll('footer > div')
         .forEach(menuItem => menuItem.classList.remove('selected'));
 }
 
 function showCol3() {
-    document.querySelector('.col3').classList.remove('hidden');
+    show(document.querySelector('.col3'));
     document.getElementById('market-menu').classList.remove('col3-hidden');
     document.getElementById('watchlist').classList.remove('col3-hidden');
 }
@@ -552,10 +556,8 @@ function togglePlaceOrderForms(radioEvent) {
     const radio = radioEvent.target;
     const formID = `${radio.id}-form`;
 
-    document.querySelectorAll(`form:not(#${formID})`)
-        .forEach(form => form.classList.add('hidden'));
-
-    document.getElementById(formID).classList.remove('hidden');
+    document.querySelectorAll(`form:not(#${formID})`).forEach(hide);
+    show(document.getElementById(formID));
 }
 
 function setupPlaceOrderFormRadios() {
@@ -566,11 +568,11 @@ function setupPlaceOrderFormRadios() {
 function setupPlaceOrderErrorBanner() {
     const banner = document.getElementById('error-banner');
 
-    const hideErrorBanner = () => banner.classList.add('hidden');
+    const hideErrorBanner = () => hide(banner);
     document.getElementById('normal-order').addEventListener('change', hideErrorBanner);
     document.getElementById('stop-order').addEventListener('change', hideErrorBanner);
 
-    const showErrorBanner = () => banner.classList.remove('hidden');
+    const showErrorBanner = () => show(banner);
     document.querySelector('label[for=trailing-order]').addEventListener('click', showErrorBanner);    // Radios are disabled anyway
     document.querySelector('label[for=oso-order]').addEventListener('click', showErrorBanner);         // So click handlers are on labels
     document.querySelectorAll('form').forEach(form => form.addEventListener('submit', showErrorBanner));
