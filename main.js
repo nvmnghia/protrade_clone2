@@ -9,36 +9,13 @@ const floor = Math.floor;
 
     /**
      * Instantiate the table with a <table> element.
-     * @param tableElement
+     *
+     * @param {HTMLTableElement} tableElement
      */
     constructor(tableElement) {
         this.table = tableElement;
         this.tableBody = tableElement.querySelector('tbody');
         this.rowTemplate = tableElement.querySelector('template');
-
-        // The table is rendered once, at the first time it is shown.
-        this.rendered = false;
-        if (this.visible()) {
-            this.render();
-        }
-    }
-
-    /**
-     * Check if the table is shown.
-     */
-    visible() {
-        return this.table.style.display !== 'none';
-    }
-
-    /**
-     * Toggle table.
-     */
-    toggle() {
-        if (this.visible()) {
-            this.table.style.display = 'none';
-        } else {
-            this.table.style.display = 'table';
-        }
 
         this.render();
     }
@@ -59,16 +36,30 @@ const floor = Math.floor;
 
     /**
      * Render the whole table body.
-     * Guaranteed to be idempotent (run once).
      */
     render() {
-        if (this.rendered) {
-            return;
-        }
-
         this.generateData().forEach(this.renderRow, this);
+    }
+}
 
-        this.rendered = true;
+class ToggleableTable extends Table {
+    /**
+     * Check if the table is shown.
+     */
+    visible() {
+        return this.table.style.display !== 'none';
+    }
+
+    /**
+     * Toggle table.
+     */
+    toggle() {
+        const visible = this.visible();
+        if (!visible && !this.renderedOnce) {
+            this.render();
+            this.renderedOnce = true;
+        }
+        this.table.style.display = visible ? 'none' : 'table';
     }
 }
 
@@ -118,7 +109,7 @@ let selectTradingHistoryTable = null;
 /**
  * Concrete class for Price Step table.
  */
- class PriceStepTable extends Table {
+ class PriceStepTable extends ToggleableTable {
 
     generateData() {
         const generateCell = () => [
@@ -172,7 +163,7 @@ let selectTradingHistoryTable = null;
 
 }
 
-class TradingHistoryTable extends Table {
+class TradingHistoryTable extends ToggleableTable {
     generateData() {
         const SECONDS_IN_DAY = 24 * 3600;
 
@@ -373,11 +364,11 @@ function toggleOrderbookPanelTables(event) {
 }
 
 function setupOrderbookPanel() {
-    dayOrderTable = new Table(document.getElementById('day-order-table'));
+    dayOrderTable = new ToggleableTable(document.getElementById('day-order-table'));
     selectDayOrderTable = document.getElementById('day-order');
     selectDayOrderTable.onclick = toggleOrderbookPanelTables;
 
-    conditionalOrderTable = new Table(document.getElementById('conditional-order-table'));
+    conditionalOrderTable = new ToggleableTable(document.getElementById('conditional-order-table'));
     selectConditionalOrderTable = document.getElementById('conditional-order');
     selectConditionalOrderTable.onclick = toggleOrderbookPanelTables;
 }
