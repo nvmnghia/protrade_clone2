@@ -240,11 +240,14 @@
             </div>
 
             <div id="panel-title-content">
-              <div id="panel-title-orderbook">
-                <div class="table-selector">
-                  <a id="day-order" class="table-selected">Intraday order</a>
-                  <a id="conditional-order">Conditional order</a>
-                </div>
+              <div id="panel-title-orderbook" class="table-selector">
+                <a id="day-order" class="table-selected">Intraday order</a>
+                <a id="conditional-order">Conditional order</a>
+              </div>
+
+              <div id="panel-title-portfolio" class="table-selector" style="display: none;">
+                <a id="open-position" class="table-selected">Open Positions</a>
+                <a id="closing-position">Closing Positions</a>
               </div>
             </div>
           </div>
@@ -279,6 +282,33 @@
                   </tr>
                 </thead>
                 <tbody></tbody>
+              </table>
+            </div>
+
+            <div id="portfolio" style="display: none;">
+              <!-- Open positions table -->
+              <table id="open-positions-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Symbol</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Current Price</th>
+                    <th scope="col">+/-</th>
+                  </tr>
+                </thead>
+              </table>
+
+              <table id="closing-positions-table" style="display: none;">
+                <thead>
+                  <tr>
+                    <th scope="col">Symbol</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Buy Price</th>
+                    <th scope="col">Sell Price</th>
+                    <th scope="col">Profit/Loss</th>
+                  </tr>
+                </thead>
               </table>
             </div>
           </div>
