@@ -503,7 +503,7 @@ function selectManagementPanels(event) {
 }
 
 function hideCol3() {
-    hide(document.querySelector('.col3'));
+    hide(document.getElementById('col3'));
     document.getElementById('market-menu').classList.add('col3-hidden');
     document.getElementById('watchlist').classList.add('col3-hidden');
 
@@ -513,7 +513,7 @@ function hideCol3() {
 }
 
 function showCol3() {
-    show(document.querySelector('.col3'));
+    show(document.getElementById('col3'));
     document.getElementById('market-menu').classList.remove('col3-hidden');
     document.getElementById('watchlist').classList.remove('col3-hidden');
 }

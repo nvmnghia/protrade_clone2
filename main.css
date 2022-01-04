@@ -44,25 +44,25 @@ body {
   width: 100%;
 }
 
-.col1 {
+#col1 {
   flex: 1;
 }
 
-.col2 {
+#col2 {
   width: 350px;
 }
 
-.col3 {
+#col3 {
   width: 400px;
 }
 
 /* Per-column layout */
-.col1, .col2, .col3 {
+#col1, #col2, #col3 {
   display: flex;
   flex-direction: column;
 }
 
-.col1 > *, .col2 > *, .col3 > * {
+#col1 > *, #col2 > *, #col3 > * {
   margin: 1px;
 }
 
@@ -101,7 +101,7 @@ body {
   background-color: rgb(16, 19, 26);
 }
 
-.col1 > *, .col2 > *, .col3 > * {
+#col1 > *, #col2 > *, #col3 > * {
   background-color: #2f3240;
 }
 

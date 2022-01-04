@@ -1,22 +1,22 @@
 /********************************************************************************
- * .col3 show & hide
+ * #col3 show & hide
  ********************************************************************************/
 
-/* footer has the same width as .col3.
+/* footer has the same width as #col3.
 The general idea is that footer always stays the same (size, position).
 In other words, other elements move to creates room for footer. */
 
-/* .col3 shown */
-.col3 {
+/* #col3 shown */
+#col3 {
   padding-bottom: 30px !important;
 }
 
-/* .col3 hidden */
+/* #col3 hidden */
 #market-menu.col3-hidden {
   padding-right: 50px !important;
 }
 
-/* .col3 hidden
+/* #col3 hidden
 Due to flex sizing, padding & margin for #watchlist can't be used here,
 as it would affect the height of both #watchlist and #history.
 So #watchlist-table is used instead. */
