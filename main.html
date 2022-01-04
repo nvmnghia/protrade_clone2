@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="market.css" />
     <link rel="stylesheet" href="history.css" />
     <link rel="stylesheet" href="watchlist.css" />
-    <link rel="stylesheet" href="orderbook.css" />
+    <link rel="stylesheet" href="management.css" />
     <link rel="stylesheet" href="placeorder.css" />
     <link rel="stylesheet" href="footer.css" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -231,7 +231,7 @@
         </div>
       </div>
       <div class="col3">
-        <div id="orderbook">
+        <div id="management">
           <div id="panel-title">
             <!-- Refresh or close the panel -->
             <div id="panel-control">
@@ -248,35 +248,37 @@
           </div>
 
           <div id="panel-content">
-            <!-- Day order table -->
-            <table id="day-order-table">
-              <thead>
-                <tr>
-                  <th scope="col">Order</th>
-                  <th scope="col">Symbol</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">WTF</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
+            <div id="orderbook">
+              <!-- Day order table -->
+              <table id="day-order-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Order</th>
+                    <th scope="col">Symbol</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">WTF</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
 
-            <!-- Conditional order table -->
-            <table id="conditional-order-table" style="display: none;">
-              <thead>
-                <tr>
-                  <th scope="col">Order</th>
-                  <th scope="col">Symbol</th>
-                  <th scope="col">Trigger Price</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Expiration Date</th>
-                  <th scope="col">WTF</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
+              <!-- Conditional order table -->
+              <table id="conditional-order-table" style="display: none;">
+                <thead>
+                  <tr>
+                    <th scope="col">Order</th>
+                    <th scope="col">Symbol</th>
+                    <th scope="col">Trigger Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Expiration Date</th>
+                    <th scope="col">WTF</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
           </div>
         </div>
 

@@ -74,8 +74,7 @@ body {
   flex: 2;
 }
 
-/* Place Order panel fits to content, while Orderbook takes the rest */
-#orderbook {
+#management {
   flex: 1;
 }
 

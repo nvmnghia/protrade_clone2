@@ -18,20 +18,17 @@
 
 
 /********************************************************************************
- * Day Order table
+ * Orderbook
  ********************************************************************************/
 
+/* Day Order table */
 #day-order-table th:nth-child(1), #day-order-table td:nth-child(1) { width: 13%; }
 #day-order-table th:nth-child(2), #day-order-table td:nth-child(2) { width: 23%; }
 #day-order-table th:nth-child(3), #day-order-table td:nth-child(3) { width: 18%; }
 #day-order-table th:nth-child(4), #day-order-table td:nth-child(4) { width: 15%; }
 #day-order-table th:nth-child(5), #day-order-table td:nth-child(5) { width: 31%; }
 
-
-/********************************************************************************
- * Conditional Order table
- ********************************************************************************/
-
+/* Conditional Order table */
 #conditional-order-table th:nth-child(1), #conditional-order-table td:nth-child(1) { width: 12%; }
 #conditional-order-table th:nth-child(2), #conditional-order-table td:nth-child(2) { width: 17%; }
 #conditional-order-table th:nth-child(3), #conditional-order-table td:nth-child(3) { width: 17%; }
