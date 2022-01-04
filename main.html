@@ -246,8 +246,8 @@
               </div>
 
               <div id="panel-title-portfolio" class="table-selector" style="display: none;">
-                <a id="open-position" class="table-selected">Open Positions</a>
-                <a id="closing-position">Closing Positions</a>
+                <a id="open-positions" class="table-selected">Open Positions</a>
+                <a id="closing-positions">Closing Positions</a>
               </div>
 
               <div id="panel-title-assets" style="display: none;">
@@ -260,7 +260,7 @@
           </div>
 
           <div id="panel-content">
-            <div id="orderbook">
+            <div id="orderbook" style="display: none;">
               <!-- Intraday order table -->
               <table id="intraday-order-table">
                 <thead>
@@ -292,7 +292,7 @@
               </table>
             </div>
 
-            <div id="portfolio" style="display: none;">
+            <div id="portfolio">
               <!-- Open positions table -->
               <table id="open-positions-table">
                 <thead>
@@ -476,9 +476,9 @@
 
     <footer>
       <!-- TODO: consistent naming scheme for selector & content -->
-      <div>Orderbook</div>
-      <div>Portfolio</div>
-      <div>Assets</div>
+      <div id="select-orderbook" class="selected">Orderbook</div>
+      <div id="select-portfolio">Portfolio</div>
+      <div id="select-assets">Assets</div>
     </footer>
 
     <script src="main.js"></script>

@@ -31,10 +31,16 @@ So #watchlist-table is used instead. */
 
 footer {
   display: flex;
+  padding: 0 1px;
 }
 
-footer > * {
+footer > div {
   flex: 1;
   text-align: center;
   line-height: 30px;
+  cursor: pointer;
+}
+
+footer > div.selected {
+  background-color: #2f3240;
 }

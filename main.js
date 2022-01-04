@@ -432,6 +432,91 @@ function setupOrderbookPanel() {
 
 
 /********************************************************************************
+ * Portfolio panel
+ ********************************************************************************/
+
+let selectOpenPositionsTable = null;
+let openPositionsTable = null;
+
+let selectClosingPositionsTable = null;
+let closingPositionsTable = null;
+
+function togglePortfolioPanelTables(event) {
+    if (event.target.classList.contains('table-selected')) {
+        return;
+    }
+
+    selectOpenPositionsTable.classList.toggle('table-selected');
+    selectClosingPositionsTable.classList.toggle('table-selected');
+
+    // TODO: change/remove toggle(), as it fails when there're more than 2 tables.
+    openPositionsTable.toggle();
+    closingPositionsTable.toggle();
+}
+
+function setupPortfolioPanel() {
+    openPositionsTable = new Table(document.getElementById('open-positions-table'));
+    selectOpenPositionsTable = document.getElementById('open-positions');
+    selectOpenPositionsTable.onclick = toggleOrderbookPanelTables;
+
+    closingPositionsTable = new Table(document.getElementById('closing-positions-table'));
+    selectClosingPositionsTable = document.getElementById('closing-positions');
+    selectClosingPositionsTable.onclick = toggleOrderbookPanelTables;
+}
+
+
+/********************************************************************************
+ * Management panel
+ ********************************************************************************/
+
+const managementMenus = {
+    'select-orderbook': {
+        title: 'panel-title-orderbook',
+        content: 'orderbook'
+    },
+    'select-portfolio': {
+        title: 'panel-title-portfolio',
+        content: 'portfolio'
+    },
+    'select-assets': {
+        title: 'panel-title-assets',
+        content: 'assets'
+    }
+}
+
+function selectManagementPanels(event) {
+    const selected = event.target;
+    if (selected.classList.contains('selected')) {
+        return;
+    }
+
+    document.querySelectorAll('footer > div')
+        .forEach(menuItem => menuItem.classList.remove('selected'));
+    selected.classList.add('selected');
+
+    for (const [_, target] of Object.entries(managementMenus)) {
+        document.getElementById(target.title).style.display   = 'none';
+        document.getElementById(target.content).style.display = 'none';
+    }
+    const titleID   = managementMenus[selected.id].title;
+    document.getElementById(titleID).style.display = 'flex';    // TODO: use a .hidden class so that only toggling is needed
+    const contentID = managementMenus[selected.id].content;
+    document.getElementById(contentID).style.display = 'flex';
+}
+
+function setupManagementMenu() {    // The footer tabs
+    document.querySelectorAll('footer > div')
+        .forEach(menuItem => menuItem.onclick = selectManagementPanels);
+}
+
+function setupManagementPanel() {
+    setupOrderbookPanel();
+    setupPortfolioPanel();
+    setupManagementMenu();
+}
+
+
+/********************************************************************************
  * Place Order panel
  ********************************************************************************/
 
@@ -490,6 +575,6 @@ window.onload = () => {
     setupMarketCharts();
     setupHistoryPanel();
     setupWatchlistTable();
-    setupOrderbookPanel();
+    setupManagementPanel();
     setupPlaceOrderPanel();
 }
