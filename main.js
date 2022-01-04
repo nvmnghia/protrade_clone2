@@ -34,12 +34,7 @@ const floor = Math.floor;
      * Toggle table.
      */
     toggle() {
-        if (this.visible()) {
-            this.table.style.display = 'none';
-        } else {
-            this.table.style.display = 'table';
-        }
-
+        this.table.classList.toggle('hidden');
         this.render();
     }
 
@@ -495,13 +490,13 @@ function selectManagementPanels(event) {
     selected.classList.add('selected');
 
     for (const [_, target] of Object.entries(managementMenus)) {
-        document.getElementById(target.title).style.display   = 'none';
-        document.getElementById(target.content).style.display = 'none';
+        document.getElementById(target.title).classList.add('hidden');
+        document.getElementById(target.content).classList.add('hidden');
     }
     const titleID   = managementMenus[selected.id].title;
-    document.getElementById(titleID).style.display = 'flex';    // TODO: use a .hidden class so that only toggling is needed
+    document.getElementById(titleID).classList.remove('hidden');
     const contentID = managementMenus[selected.id].content;
-    document.getElementById(contentID).style.display = 'flex';
+    document.getElementById(contentID).classList.remove('hidden');
 }
 
 function hideCol3() {
@@ -558,9 +553,9 @@ function togglePlaceOrderForms(radioEvent) {
     const formID = `${radio.id}-form`;
 
     document.querySelectorAll(`form:not(#${formID})`)
-        .forEach(form => form.style.display = 'none');
+        .forEach(form => form.classList.add('hidden'));
 
-    document.getElementById(formID).style.display = 'block';
+    document.getElementById(formID).classList.remove('hidden');
 }
 
 function setupPlaceOrderFormRadios() {
@@ -571,11 +566,11 @@ function setupPlaceOrderFormRadios() {
 function setupPlaceOrderErrorBanner() {
     const banner = document.getElementById('error-banner');
 
-    const hideErrorBanner = () => banner.style.display = 'none';
+    const hideErrorBanner = () => banner.classList.add('hidden');
     document.getElementById('normal-order').addEventListener('change', hideErrorBanner);
     document.getElementById('stop-order').addEventListener('change', hideErrorBanner);
 
-    const showErrorBanner = () => banner.style.display = 'block';
+    const showErrorBanner = () => banner.classList.remove('hidden');
     document.querySelector('label[for=trailing-order]').addEventListener('click', showErrorBanner);    // Radios are disabled anyway
     document.querySelector('label[for=oso-order]').addEventListener('click', showErrorBanner);         // So click handlers are on labels
     document.querySelectorAll('form').forEach(form => form.addEventListener('submit', showErrorBanner));

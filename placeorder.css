@@ -3,7 +3,6 @@
 }
 
 #error-banner {
-  display: none;
   text-align: center;
   color: red;
   margin: 5px 0;
@@ -72,10 +71,6 @@ label { line-height: 30px; }
 
 #price-stop {
   text-transform: uppercase;
-}
-
-#price-lower, #price-higher {
-  display: none;
 }
 
 #price-lower + label, #price-higher + label {
