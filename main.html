@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="market.css" />
     <link rel="stylesheet" href="history.css" />
     <link rel="stylesheet" href="watchlist.css" />
     <link rel="stylesheet" href="orderbook.css" />
@@ -94,11 +95,19 @@
         ></iframe>
 
         <!-- Market chart -->
-        <iframe
-          id="market"
-          title="Market"
-          src="https://mkw.vndirect.com.vn/leader_lagger?color=gray"
-        ></iframe>
+        <div id="market">
+          <iframe
+            id="market-chart-box"
+            title="Leader - Lagger chart"
+            src="https://mkw.vndirect.com.vn/leader_lagger?color=gray"
+          ></iframe>
+          <ul id="market-menu" class="no-bullet">
+            <li id="market-intraday">INTRADAY</li>
+            <li id="market-vn30">VN30</li>
+            <li id="market-leader-lagger" class="selected"><i class="fa-solid fa-chart-bar"></i></li>
+            <li id="market-pie"><i class="fa-solid fa-chart-pie"></i></li>
+          </ul>
+        </div>
       </div>
       <div class="col2">
         <div id="history">

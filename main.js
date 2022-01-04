@@ -106,6 +106,54 @@ function setupClock() {
 
 
 /********************************************************************************
+ * Market charts
+ ********************************************************************************/
+
+const marketCharts = {
+    'market-intraday': {
+        title: 'Intraday',
+        src: 'https://mkw.vndirect.com.vn/leader_lagger?color=gray'
+    },
+    'market-vn30': {
+        title: 'VN30',
+        src: 'https://dchart.vndirect.com.vn/?theme=dark&symbol=VN30&disableSyncSymbol=true&timeframe=1'
+    },
+    'market-leader-lagger': {
+        title: 'Leader - Lagger',
+        src: 'https://mkw.vndirect.com.vn/leader_lagger?color=gray'
+    },
+    'market-pie': {
+        title: 'Pie chart',
+        src: 'https://mkw.vndirect.com.vn/market_cap?color=gray&height=280'
+    }
+};
+
+function selectMarketChart(event) {
+    const selected = event.target;
+    console.log(selected);
+
+    // Highlight selector
+    document.querySelectorAll('#market-menu > li')
+        .forEach(element => element.classList.remove('selected'));
+    selected.classList.add('selected');
+
+    // Change iframe
+    const chartBox = document.getElementById('market-chart-box');
+    const chartConfig = marketCharts[selected.id];
+    chartBox.title = chartConfig.title;
+    chartBox.src   = chartConfig.src;
+}
+
+function setupMarketCharts() {
+    // Click handler must be fired on parent element (<li>) only, so useCapture is used.
+    // But it currently doesn't work (reliably), so pointer-events (in market.css) has to be used instead.
+    // TODO: Check why useCapture doesn't work.
+    document.querySelectorAll('#market-menu > li').forEach(chartSelector =>
+        chartSelector.addEventListener('click', selectMarketChart, true));    // There's <i> inside <li>
+}
+
+
+/********************************************************************************
  * History chart
  ********************************************************************************/
 
@@ -439,6 +487,7 @@ function setupPlaceOrderPanel() {
 
 window.onload = () => {
     setupClock();
+    setupMarketCharts();
     setupHistoryPanel();
     setupWatchlistTable();
     setupOrderbookPanel();

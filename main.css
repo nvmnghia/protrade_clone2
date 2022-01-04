@@ -147,6 +147,10 @@ tr {
   margin-bottom: 10px;
 }
 
+.no-bullet {
+  list-style: none;
+}
+
 /* drop-down instead of dropdown to avoid collision with BS down the line */
 .drop-down {
   position: relative;
