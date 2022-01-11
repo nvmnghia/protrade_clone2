@@ -26,7 +26,6 @@
   color: inherit;
 }
 
-/* TODO: merge with .table-selected */
 .selected {
   color: #f7941d;
   font-weight: 700;
