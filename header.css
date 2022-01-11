@@ -63,7 +63,6 @@ header nav li {
   display: inline-block;    /* Horizontal list */
   border-collapse: collapse;
   font-weight: 700;
-  border-left: 1px solid #444;
   line-height: 20px;
 }
 

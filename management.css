@@ -80,11 +80,6 @@
 
 #assets-summary tr {
   line-height: 30px;
-  border-top: 1px solid #444;
-}
-
-#assets-summary tr:last-child {
-  border-bottom: 1px solid #444;
 }
 
 #assets-summary th {
