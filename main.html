@@ -28,13 +28,13 @@
         <!-- Navigation -->
         <nav>
           <ul>
-            <li>
-              <!-- TODO: remove nav-selected, table-selected, etc -->
-              <a href="/main.html" class="nav-selected">Main page</a>
-            </li><li>
+            <li class="border-left">
+              <a href="/main.html" class="selected">Main page</a>
+            </li>
+            <li class="border-left">
               <a href="/assets.html">Assets</a>
             </li>
-            <li>
+            <li class="border-left border-right">
               <a href="/guide.html">Guide</a>
             </li>
           </ul>
@@ -102,7 +102,7 @@
             title="Leader - Lagger chart"
             src="https://mkw.vndirect.com.vn/leader_lagger?color=gray"
           ></iframe>
-          <ul id="market-menu" class="no-bullet">
+          <ul id="market-menu" class="no-bullet border-top">
             <li id="market-intraday">INTRADAY</li>
             <li id="market-vn30">VN30</li>
             <li id="market-leader-lagger" class="selected"><i class="fa-solid fa-chart-bar"></i></li>
@@ -113,7 +113,7 @@
       <div id="col2">
         <div id="history">
           <!-- Summary -->
-          <div id="summary">
+          <div id="summary" class="border-bottom">
             <div id="futures">VN30F2201</div>
             <div id="floor">
               <span>Floor:</span>
@@ -134,7 +134,7 @@
 
           <!-- Table selector, might use nav&tab -->
           <div class="table-selector">
-            <a id="price-step" class="table-selected">Price step</a>
+            <a id="price-step" class="selected">Price step</a>
             <a id="trading-history">Trading history</a>
           </div>
 
@@ -143,7 +143,7 @@
             <thead>
               <tr>
                 <th id="buy-quantity" scope="col">Buy Qty</th>
-                <th id="buy-price" scope="col">Buy Price</th>
+                <th id="buy-price" class="border-right" scope="col">Buy Price</th>
                 <th id="sell-price" scope="col">Sell Price</th>
                 <th id="sell-quantity" scope="col">Sell Qty</th>
               </tr>
@@ -152,9 +152,9 @@
 
             <!-- Row template -->
             <template>
-              <tr>
+              <tr class="border-bottom">
                 <td><span></span></td>
-                <td style="position: relative">
+                <td class="border-right" style="position: relative">
                   <span></span>
                   <div class="price-step-cell-bg" style="right: 0"></div>
                 </td>
@@ -241,12 +241,12 @@
 
             <div id="panel-title-content">
               <div id="panel-title-orderbook" class="table-selector">
-                <a id="day-order" class="table-selected">Intraday order</a>
+                <a id="day-order" class="selected">Intraday order</a>
                 <a id="conditional-order">Conditional order</a>
               </div>
 
               <div id="panel-title-portfolio" class="table-selector hidden">
-                <a id="open-positions" class="table-selected">Open Positions</a>
+                <a id="open-positions" class="selected">Open Positions</a>
                 <a id="closing-positions">Closing Positions</a>
               </div>
 
@@ -322,15 +322,15 @@
             <div id="assets" class="hidden">
               <table id="assets-summary">
                 <tbody>
-                  <tr>
+                  <tr class="border-top">
                     <th scope="row">Net Worth</th>
                     <td>12345678</td>
                   </tr>
-                  <tr>
+                  <tr class="border-top">
                     <th scope="row">Margin</th>
                     <td>12345678</td>
                   </tr>
-                  <tr>
+                  <tr class="border-top border-bottom">
                     <th scope="row">Tax & Fee</th>
                     <td>12345678</td>
                   </tr>
