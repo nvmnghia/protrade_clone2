@@ -101,7 +101,7 @@ button {
   min-width: 110px;
   height: 30px;
 
-  font-weight: 700;
+  font-weight: 700;    /* TODO: replace these last font-weight: 700 */
   font-size: 14px;
 
   border: none;
