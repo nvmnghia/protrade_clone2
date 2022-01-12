@@ -89,7 +89,7 @@ label { line-height: 30px; }
 }
 
 #price-lower:checked + label, #price-higher:checked + label {
-  background-color: #f7941d;
+  background-color: var(--primary);
 }
 
 

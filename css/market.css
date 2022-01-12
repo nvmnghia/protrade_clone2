@@ -27,6 +27,6 @@
 }
 
 .selected {
-  color: #f7941d;
+  color: var(--primary);
   font-weight: 700;
 }

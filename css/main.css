@@ -71,6 +71,10 @@ footer {
  * Colors
  ********************************************************************************/
 
+:root {
+  --primary: #f7941d;
+}
+
 * {
   color: white;
 }
@@ -143,6 +147,10 @@ tr {
 
 .hidden {
   display: none !important;
+}
+
+.color-primary {
+  color: var(--primary);
 }
 
 .border {

@@ -19,7 +19,7 @@
 }
 
 #panel-control > i:hover {
-  color: #f7941d;
+  color: var(--primary);
 }
 
 
@@ -71,7 +71,6 @@
   padding-left: 10px;
   line-height: 30px;
   font-weight: 700;
-  color: #f7941d;
 }
 
 #panel-title-assets * {

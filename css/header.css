@@ -37,10 +37,6 @@ img {
  * Clock
  ********************************************************************************/
 
-#vn-clock * {
-  color: #f7941d;
-}
-
 #vn-time {
   font-weight: 700;
 }
@@ -79,10 +75,6 @@ header nav li a {
   margin-right: 20px;
 }
 
-#profit-loss-value span:first-child {
-  color: #f7941d;
-}
-
 #profit-loss-value span:last-child {
   color: #ffd900;
   font-size: 15px;
@@ -104,7 +96,7 @@ header nav li a {
 }
 
 #upgrade-account {
-  background-color: #f7941d;
+  background-color: var(--primary);
   margin: 0 20px;
 }
 
@@ -119,7 +111,7 @@ header nav li a {
 }
 
 #my-account .drop-down-toggle:hover > span > * {
-  color: #f7941d;
+  color: var(--primary);
 }
 
 #my-account .drop-down-toggle > span {
@@ -145,7 +137,7 @@ header nav li a {
 }
 
 #my-account .drop-down-menu > li:hover > * {
-  color: #f7941d;
+  color: var(--primary);
 }
 
 #user-fullname {
