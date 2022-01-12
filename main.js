@@ -277,12 +277,12 @@ class TradingHistoryTable extends Table {
 }
 
 function toggleHistoryPanelTables(event) {
-    if (event.target.classList.contains('selected')) {
+    if (event.target.classList.contains('active')) {
         return;
     }
 
-    selectPriceStepTable.classList.toggle('selected');
-    selectTradingHistoryTable.classList.toggle('selected');
+    selectPriceStepTable.classList.toggle('active');
+    selectTradingHistoryTable.classList.toggle('active');
 
     priceStepTable.toggle();
     tradingHistoryTable.toggle();

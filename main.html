@@ -116,8 +116,8 @@
       <div id="col2" class="col-md-2 px-0 d-flex flex-column">
         <div id="history" class="flex-grow-3">
           <!-- Summary -->
-          <div id="summary" class="bd-bottom">
-            <div id="futures" class="fw-bold">VN30F2201</div>
+          <div id="summary" class="bd-bottom d-flex">
+            <div id="futures" class="fw-bold d-flex align-items-center flex-grow-1">VN30F2201</div>
             <div id="floor">
               <span>Floor:</span>
               <br />
@@ -135,11 +135,15 @@
             </div>
           </div>
 
-          <!-- Table selector, might use nav&tab -->
-          <div class="table-selector">
-            <a id="price-step" class="selected">Price step</a>
-            <a id="trading-history">Trading history</a>
-          </div>
+          <!-- Table selector -->
+          <ul class="nav nav-fill">
+            <li class="nav-item">
+              <a id="price-step" class="nav-link active" href="#">Price step</a>
+            </li>
+            <li class="nav-item">
+              <a id="trading-history" class="nav-link" href="#">Trading history</a>
+            </li>
+          </ul>
 
           <!-- Price step table -->
           <table id="price-step-table">
