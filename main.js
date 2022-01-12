@@ -277,12 +277,12 @@ class TradingHistoryTable extends Table {
 }
 
 function toggleHistoryPanelTables(event) {
-    if (event.target.classList.contains('table-selected')) {
+    if (event.target.classList.contains('selected')) {
         return;
     }
 
-    selectPriceStepTable.classList.toggle('table-selected');
-    selectTradingHistoryTable.classList.toggle('table-selected');
+    selectPriceStepTable.classList.toggle('selected');
+    selectTradingHistoryTable.classList.toggle('selected');
 
     priceStepTable.toggle();
     tradingHistoryTable.toggle();
@@ -407,12 +407,12 @@ let selectConditionalOrderTable = null;
 let conditionalOrderTable = null;
 
 function toggleOrderbookPanelTables(event) {
-    if (event.target.classList.contains('table-selected')) {
+    if (event.target.classList.contains('selected')) {
         return;
     }
 
-    selectIntraDayOrderTable.classList.toggle('table-selected');
-    selectConditionalOrderTable.classList.toggle('table-selected');
+    selectDayOrderTable.classList.toggle('selected');
+    selectConditionalOrderTable.classList.toggle('selected');
 
     intradayOrderTable.toggle();
     conditionalOrderTable.toggle();
@@ -440,12 +440,12 @@ let selectClosingPositionsTable = null;
 let closingPositionsTable = null;
 
 function togglePortfolioPanelTables(event) {
-    if (event.target.classList.contains('table-selected')) {
+    if (event.target.classList.contains('selected')) {
         return;
     }
 
-    selectOpenPositionsTable.classList.toggle('table-selected');
-    selectClosingPositionsTable.classList.toggle('table-selected');
+    selectOpenPositionsTable.classList.toggle('selected');
+    selectClosingPositionsTable.classList.toggle('selected');
 
     // TODO: change/remove toggle(), as it fails when there're more than 2 tables.
     openPositionsTable.toggle();

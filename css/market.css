@@ -11,7 +11,6 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  border-top: 1px solid #444;
   height: 30px;
   background-color: rgb(16, 19, 26);
 }
@@ -27,7 +26,6 @@
   color: inherit;
 }
 
-/* TODO: merge with .table-selected */
 .selected {
   color: #f7941d;
   font-weight: 700;

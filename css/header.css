@@ -63,20 +63,11 @@ header nav li {
   display: inline-block;    /* Horizontal list */
   border-collapse: collapse;
   font-weight: 700;
-  border-left: 1px solid #444;
   line-height: 20px;
-}
-
-header nav li:last-child {
-  border-right: 1px solid #444;
 }
 
 header nav li a {
   margin: 0 10px;
-}
-
-.nav-selected {
-  color: #f7941d;
 }
 
 

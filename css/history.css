@@ -4,8 +4,6 @@
 
 #summary {
   display: flex;
-
-  border-bottom: 1px solid #444;
 }
 
 #summary > * {
@@ -54,15 +52,6 @@
 
 #price-step-table td:nth-child(2) > span, #price-step-table td:nth-child(3) > span {
   color: red;
-}
-
-#price-step-table > tbody > tr {
-  border-bottom: 1px solid #444;
-}
-
-/* TODO: merge this border with the above one; #summary also uses this */
-#price-step-table th:nth-child(2), #price-step-table td:nth-child(2) {
-  border-right: 1px solid #444;
 }
 
 .price-step-cell-bg {
