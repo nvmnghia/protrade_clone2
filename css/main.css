@@ -36,19 +36,11 @@ html {
 /* Margins */
 #col1 > *, #col2 > *, #col3 > * {
   --panel-spacing: 2px;
-  margin: calc(var(--panel-spacing) / 2) calc(var(--panel-spacing) / 2);
-}
-
-#col1 > :first-child, #col2 > :first-child, #col3 > :first-child {
-  margin-top: 0;
+  margin: 0 var(--panel-spacing) var(--panel-spacing) 0;
 }
 
 #col1 > :last-child, #col2 > :last-child, #col3 > :last-child {
   margin-bottom: 0;
-}
-
-#col1 > * {
-  margin-left: 0;
 }
 
 #col3 > * {
