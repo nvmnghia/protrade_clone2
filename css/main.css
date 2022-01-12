@@ -153,23 +153,24 @@ tr {
   color: var(--primary);
 }
 
-.border {
+/* TODO: replace with BS border */
+.bd {
   border: 1px solid #444;
 }
 
-.border-left {
+.bd-left {
   border-left: 1px solid #444;
 }
 
-.border-right {
+.bd-right {
   border-right: 1px solid #444;
 }
 
-.border-top {
+.bd-top {
   border-top: 1px solid #444;
 }
 
-.border-bottom {
+.bd-bottom {
   border-bottom: 1px solid #444;
 }
 
