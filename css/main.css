@@ -186,11 +186,3 @@ tr {
 .drop-down:hover .drop-down-menu {
   display: block;
 }
-
-/* tag instead of label to avoid ... */
-.tag {
-  border-radius: 3px;
-  line-height: 20px;
-  display: inline-block;
-  padding: 0 10px;
-}

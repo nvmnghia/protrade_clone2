@@ -95,10 +95,6 @@ header nav li a {
   color: var(--primary);
 }
 
-#my-account .drop-down-toggle > span {
-  padding: 0 10px;
-}
-
 #my-account .drop-down-toggle > span:hover {
   background-color: #2f3240;
 }
