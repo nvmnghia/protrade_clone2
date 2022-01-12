@@ -32,6 +32,12 @@ img {
   max-height: 100%;
 }
 
+/* Fix width of #vn-time when value changes */
+#vn-time {
+  display: inline-block;
+  min-width: 63px;    /* Assume the longest string is 08:48:48 */
+}
+
 
 /********************************************************************************
  * Navigation
