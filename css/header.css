@@ -43,23 +43,12 @@ img {
  * Navigation
  ********************************************************************************/
 
-header nav {
-  margin-right: 20px;
-}
-
-header ul {
-  padding-left: 20px;
-  display: flex;    /* No space for inline-block li items */
-}
-
 header nav li {
-  display: inline-block;    /* Horizontal list */
-  border-collapse: collapse;
   line-height: 20px;
 }
 
 header nav li a {
-  margin: 0 10px;
+  font-weight: 700;
 }
 
 
