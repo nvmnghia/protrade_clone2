@@ -23,29 +23,6 @@ select, option, input {
   color: initial;
 }
 
-.form-row {
-  display: flex;
-  align-items: center;
-}
-
-.form-row > label {
-  width: 30%;
-}
-
-.form-row > input, .form-row > select {
-  width: 70%;
-}
-
-.form-row > input[type=checkbox] {
-  width: auto;
-}
-
-.button-row {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
 input:not([type=radio]), select, option {
   height: 30px;
   border-radius: 4px;
@@ -59,31 +36,11 @@ label { line-height: 30px; }
  * Stop order form
  ********************************************************************************/
 
-#trigger-condition {
-  width: 70%;
-  display: flex;
-}
-
-#trigger-price {
-  flex: 1;
-  margin-left: 10px;
-}
-
-#price-stop {
-  text-transform: uppercase;
-}
-
 #price-lower + label, #price-higher + label {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  margin-right: 6px;
-
-  line-height: 30px;
-  text-align: center;
-
-  border: 1px solid white;
-  border-radius: 3px;
+  --size: 30px;
+  width: var(--size);
+  height: var(--size);
+  line-height: var(--size);
 }
 
 #price-lower:checked + label, #price-higher:checked + label {

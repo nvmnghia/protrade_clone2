@@ -445,55 +445,78 @@
           <!-- Stop order form -->
           <form id="stop-order-form" method="post" action="/order/stop" class="d-none">
             <!-- Symbol -->
-            <div class="form-row my-2">
-              <label for="symbol-stop">Symbol:</label>
-              <select id="symbol-stop" name="symbol">
-                <option value="" selected>-- Please choose a symbol --</option>
-
-                <template>
-                  <option></option>
-                </template>
-              </select>
+            <div class="row my-2">
+              <div class="col-3">
+                <label for="symbol-stop" class="col-form-label">Symbol:</label>
+              </div>
+              <div class="col-9">
+                <select id="symbol-stop" class="form-control" name="symbol">
+                  <option value="" selected>-- Please choose a symbol --</option>
+  
+                  <template>
+                    <option></option>
+                  </template>
+                </select>
+              </div>
             </div>
 
             <!-- Price -->
-            <div class="form-row my-2">
-              <label for="price-stop">Price:</label>
-              <input id="price-stop" name="price" type="text" placeholder="Price">
+            <div class="row my-2">
+              <div class="col-3">
+                <label for="price-stop" class="col-form-label">Price:</label>
+              </div>
+              <div class="col-9">
+                <input id="price-stop" class="form-control text-uppercase" name="price" type="text" placeholder="Price">
+              </div>
             </div>
 
             <!-- Quantity -->
-            <div class="form-row my-2">
-              <label for="quantity-stop">Quantity:</label>
-              <input id="quantity-stop" name="quantity" type="text" placeholder="Quantity">
+            <div class="row my-2">
+              <div class="col-3">
+                <label for="quantity-stop" class="col-form-label">Quantity:</label>
+              </div>
+              <div class="col-9">
+                <input id="quantity-stop" class="form-control" name="quantity" type="text" placeholder="Quantity">
+              </div>
             </div>
 
             <!-- Trigger price -->
-            <div class="form-row my-2">
-              <label for="trigger-price">Trigger price</label>
-              <div id="trigger-condition">
-                <span>
+            <div class="row my-2">
+              <div class="col-3">
+                <label for="trigger-price" class="col-form-label">Trigger price</label>
+              </div>
+              <div class="col-9 d-flex">
+                <div class="me-2">
+                  <!-- label must be after input in this case and the case below -->
                   <input id="price-lower" class="d-none" name="trigger-condition" value="lower" type="radio" checked/>
-                  <label for="price-lower" role="button">≤</label>
-                </span>
-                <span>
+                  <label for="price-lower" class="d-inline-block text-center border border-1 rounded-3" role="button">≤</label>
+                </div>
+                <div class="me-3">
                   <input id="price-higher" class="d-none" name="trigger-condition" value="higher" type="radio"/>
-                  <label for="price-higher" role="button">≥</label>
-                </span>
-                <input id="trigger-price" name="trigger-price" type="text" placeholder="Trigger Price">
+                  <label for="price-higher" class="d-inline-block text-center border border-1 border-white rounded-3" role="button">≥</label>
+                </div>
+                <div class="flex-grow-1">
+                  <input id="trigger-price" class="form-control" name="trigger-price" type="text" placeholder="Trigger Price">
+                </div>
               </div>
             </div>
 
             <!-- Expiration -->
-            <div class="form-row my-2">
-              <label for="expiration">Expiration:</label>
-              <input id="expiration" name="expiration" type="date">
+            <div class="row my-2">
+              <div class="col-3">
+                <label for="expiration" class="col-form-label">Expiration:</label>
+              </div>
+              <div class="col-9">
+                <input id="expiration" class="form-control" name="expiration" type="date">
+              </div>
             </div>
 
             <!-- Buy/Sell -->
-            <div class="button-row my-2">
-              <button name="action" value="buy">BUY</button>
-              <button name="action" value="sell">SELL</button>
+            <div class="row my-2 justify-content-center">
+              <div class="col-auto">
+                <button class="btn mx-1" name="action" value="buy">BUY</button>
+                <button class="btn mx-1" name="action" value="sell">SELL</button>
+              </div>
             </div>
           </form>
         </div>
