@@ -57,13 +57,16 @@ html {
 }
 
 /* TODO: consider fixed for mobile layout */
+:root {
+  --footer-height: 30px;
+}
 footer {
   position: fixed;
   right: 0;
   bottom: 0;
 
   width: 400px;
-  height: 30px;
+  height: var(--footer-height);
 }
 
 

@@ -8,7 +8,7 @@ In other words, other elements move to creates room for footer. */
 
 /* #col3 shown */
 #col3 {
-  padding-bottom: 30px !important;
+  padding-bottom: var(--footer-height) !important;
 }
 
 /* #col3 hidden */
@@ -21,7 +21,7 @@ Due to flex sizing, padding & margin for #watchlist can't be used here,
 as it would affect the height of both #watchlist and #history.
 So #watchlist-table is used instead. */
 #watchlist-table.col3-hidden {
-  margin-bottom: 30px !important;
+  margin-bottom: var(--footer-height) !important;
 }
 
 
@@ -37,8 +37,8 @@ footer {
 footer > div {
   flex: 1;
   text-align: center;
-  line-height: 30px;
   cursor: pointer;
+  line-height: var(--footer-height);
 }
 
 footer > div.selected {
