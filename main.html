@@ -379,7 +379,7 @@
           <!-- Normal order form -->
           <form id="normal-order-form" method="post" action="/order/normal">
             <!-- Symbol -->
-            <div class="form-row mv-10">
+            <div class="form-row my-2">
               <label for="symbol-normal">Symbol:</label>
               <select id="symbol-normal" name="symbol">
                 <option value="" selected>-- Please choose a symbol --</option>
@@ -392,7 +392,7 @@
 
             <!-- Price -->
             <!-- TODO: use tooltips -->
-            <div class="form-row mv-10">
+            <div class="form-row my-2">
               <label for="price-normal">Price:</label>
               <select id="price-normal" name="price">
                 <option value="" disabled selected>-- Please choose a price --</option>
@@ -405,19 +405,19 @@
             </div>
 
             <!-- Quantity -->
-            <div class="form-row mv-10">
+            <div class="form-row my-2">
               <label for="quantity-normal">Quantity:</label>
               <input id="quantity-normal" name="quantity" type="number" min="0" placeholder="Quantity" />
             </div>
 
             <!-- Save -->
-            <div class="form-row mv-10">
+            <div class="form-row my-2">
               <label for="save">Save order:</label>
               <input id="save" name="save" type="checkbox" />
             </div>
 
             <!-- Buy/Sell -->
-            <div class="button-row mv-10">
+            <div class="button-row my-2">
               <button name="action" value="buy">BUY</button>
               <button name="action" value="sell">SELL</button>
             </div>
@@ -426,7 +426,7 @@
           <!-- Stop order form -->
           <form id="stop-order-form" method="post" action="/order/stop" class="hidden">
             <!-- Symbol -->
-            <div class="form-row mv-10">
+            <div class="form-row my-2">
               <label for="symbol-stop">Symbol:</label>
               <select id="symbol-stop" name="symbol">
                 <option value="" selected>-- Please choose a symbol --</option>
@@ -438,19 +438,19 @@
             </div>
 
             <!-- Price -->
-            <div class="form-row mv-10">
+            <div class="form-row my-2">
               <label for="price-stop">Price:</label>
               <input id="price-stop" name="price" type="text" placeholder="Price">
             </div>
 
             <!-- Quantity -->
-            <div class="form-row mv-10">
+            <div class="form-row my-2">
               <label for="quantity-stop">Quantity:</label>
               <input id="quantity-stop" name="quantity" type="text" placeholder="Quantity">
             </div>
 
             <!-- Trigger price -->
-            <div class="form-row mv-10">
+            <div class="form-row my-2">
               <label for="trigger-price">Trigger price</label>
               <div id="trigger-condition">
                 <span>
@@ -466,13 +466,13 @@
             </div>
 
             <!-- Expiration -->
-            <div class="form-row mv-10">
+            <div class="form-row my-2">
               <label for="expiration">Expiration:</label>
               <input id="expiration" name="expiration" type="date">
             </div>
 
             <!-- Buy/Sell -->
-            <div class="button-row mv-10">
+            <div class="button-row my-2">
               <button name="action" value="buy">BUY</button>
               <button name="action" value="sell">SELL</button>
             </div>
