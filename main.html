@@ -175,7 +175,7 @@
           </table>
 
           <!-- Trading history table -->
-          <table id="trading-history-table" class="hidden">
+          <table id="trading-history-table" class="d-none">
             <thead>
               <tr>
                 <th scope="col">Time</th>
@@ -252,12 +252,12 @@
                 <a id="conditional-order">Conditional order</a>
               </div>
 
-              <div id="panel-title-portfolio" class="table-selector hidden">
+              <div id="panel-title-portfolio" class="table-selector d-none">
                 <a id="open-positions" class="selected">Open Positions</a>
                 <a id="closing-positions">Closing Positions</a>
               </div>
 
-              <div id="panel-title-assets" class="hidden color-primary fw-bold">
+              <div id="panel-title-assets" class="d-none color-primary fw-bold">
                 <a href="/assets-info">
                   <span>Assets info</span>
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -283,7 +283,7 @@
               </table>
 
               <!-- Conditional order table -->
-              <table id="conditional-order-table" class="hidden">
+              <table id="conditional-order-table" class="d-none">
                 <thead>
                   <tr>
                     <th scope="col">Order</th>
@@ -299,7 +299,7 @@
               </table>
             </div>
 
-            <div id="portfolio" class="hidden">
+            <div id="portfolio" class="d-none">
               <!-- Open positions table -->
               <table id="open-positions-table">
                 <thead>
@@ -313,7 +313,7 @@
                 </thead>
               </table>
 
-              <table id="closing-positions-table" class="hidden">
+              <table id="closing-positions-table" class="d-none">
                 <thead>
                   <tr>
                     <th scope="col">Symbol</th>
@@ -326,7 +326,7 @@
               </table>
             </div>
 
-            <div id="assets" class="hidden">
+            <div id="assets" class="d-none">
               <table id="assets-summary">
                 <tbody>
                   <tr class="bd-top">
@@ -349,7 +349,7 @@
 
         <!-- Place Order panel -->
         <div id="placeorder">
-          <div id="error-banner" class="hidden">
+          <div id="error-banner" class="d-none">
             Create an account at VNDirect to place this order
           </div>
 
@@ -424,7 +424,7 @@
           </form>
 
           <!-- Stop order form -->
-          <form id="stop-order-form" method="post" action="/order/stop" class="hidden">
+          <form id="stop-order-form" method="post" action="/order/stop" class="d-none">
             <!-- Symbol -->
             <div class="form-row my-2">
               <label for="symbol-stop">Symbol:</label>
@@ -454,11 +454,11 @@
               <label for="trigger-price">Trigger price</label>
               <div id="trigger-condition">
                 <span>
-                  <input id="price-lower" class="hidden" name="trigger-condition" value="lower" type="radio" checked/>
+                  <input id="price-lower" class="d-none" name="trigger-condition" value="lower" type="radio" checked/>
                   <label for="price-lower" role="button">≤</label>
                 </span>
                 <span>
-                  <input id="price-higher" class="hidden" name="trigger-condition" value="higher" type="radio"/>
+                  <input id="price-higher" class="d-none" name="trigger-condition" value="higher" type="radio"/>
                   <label for="price-higher" role="button">≥</label>
                 </span>
                 <input id="trigger-price" name="trigger-price" type="text" placeholder="Trigger Price">

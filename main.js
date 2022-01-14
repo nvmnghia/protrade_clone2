@@ -2,8 +2,8 @@ const rand = Math.random;
 const round = Math.round;
 const floor = Math.floor;
 
-const hide = element => element.classList.add('hidden');
-const show = element => element.classList.remove('hidden');
+const hide = element => element.classList.add('d-none');
+const show = element => element.classList.remove('d-none');
 
 /**
  *  Base class to control table.
@@ -37,7 +37,7 @@ const show = element => element.classList.remove('hidden');
      * Toggle table.
      */
     toggle() {
-        this.table.classList.toggle('hidden');
+        this.table.classList.toggle('d-none');
         this.render();
     }
 

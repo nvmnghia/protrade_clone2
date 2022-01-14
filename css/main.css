@@ -144,10 +144,6 @@ tr {
   list-style: none;
 }
 
-.hidden {
-  display: none !important;
-}
-
 .color-primary {
   color: var(--primary);
 }
