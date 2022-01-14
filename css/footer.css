@@ -37,7 +37,6 @@ footer {
 footer > div {
   flex: 1;
   text-align: center;
-  cursor: pointer;
   line-height: var(--footer-height);
 }
 
