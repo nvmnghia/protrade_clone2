@@ -373,53 +373,72 @@
             </div>
           </div>
 
-          <!-- The forms below each has 2 submit buttons: Buy, Sell. They have the same name attribute.
-          Upon submission, the server can check which one was clicked. -->
+          <!-- The forms below each has 2 submit buttons: Buy, Sell.
+          They have the same name attribute. Upon submission, the server
+          can check which one was clicked. -->
 
           <!-- Normal order form -->
           <form id="normal-order-form" method="post" action="/order/normal">
             <!-- Symbol -->
-            <div class="form-row my-2">
-              <label for="symbol-normal">Symbol:</label>
-              <select id="symbol-normal" name="symbol">
-                <option value="" selected>-- Please choose a symbol --</option>
-
-                <template>
-                  <option></option>
-                </template>
-              </select>
+            <div class="row my-2">
+              <div class="col-3">
+                <label for="symbol-normal" class="col-form-label">Symbol:</label>
+              </div>
+              <div class="col-9">
+                <select id="symbol-normal" class="form-control" name="symbol">
+                  <option value="" selected>-- Please choose a symbol --</option>
+  
+                  <template>
+                    <option></option>
+                  </template>
+                </select>
+              </div>
             </div>
 
             <!-- Price -->
             <!-- TODO: use tooltips -->
-            <div class="form-row my-2">
-              <label for="price-normal">Price:</label>
-              <select id="price-normal" name="price">
-                <option value="" disabled selected>-- Please choose a price --</option>
-                <option value="ATO">ATO</option>
-                <option value="ATC">ATC</option>
-                <option value="MTL">MTL</option>
-                <option value="MOK">MOK</option>
-                <option value="MAK">MAK</option>
-              </select>
+            <div class="row my-2">
+              <div class="col-3">
+                <label for="price-normal" class="col-form-label">Price:</label>
+              </div>
+              <div class="col-9">
+                <select id="price-normal" class="form-control" name="price">
+                  <option value="" disabled selected>-- Please choose a price --</option>
+                  <option value="ATO">ATO</option>
+                  <option value="ATC">ATC</option>
+                  <option value="MTL">MTL</option>
+                  <option value="MOK">MOK</option>
+                  <option value="MAK">MAK</option>
+                </select>
+              </div>
             </div>
 
             <!-- Quantity -->
-            <div class="form-row my-2">
-              <label for="quantity-normal">Quantity:</label>
-              <input id="quantity-normal" name="quantity" type="number" min="0" placeholder="Quantity" />
+            <div class="row my-2">
+              <div class="col-3">
+                <label for="quantity-normal" class="col-form-label">Quantity:</label>
+              </div>
+              <div class="col-9">
+                <input id="quantity-normal" class="form-control" name="quantity" type="number" min="0" placeholder="Quantity" />
+              </div>
             </div>
 
             <!-- Save -->
-            <div class="form-row my-2">
-              <label for="save">Save order:</label>
-              <input id="save" name="save" type="checkbox" />
+            <div class="row my-2">
+              <div class="col-3">
+                <label for="save" class="form-check-label">Save order:</label>
+              </div>
+              <div class="col-9">
+                <input id="save" class="form-check-input" name="save" type="checkbox" />
+              </div>
             </div>
 
             <!-- Buy/Sell -->
-            <div class="button-row my-2">
-              <button name="action" value="buy">BUY</button>
-              <button name="action" value="sell">SELL</button>
+            <div class="row my-2 justify-content-center">
+              <div class="col-auto">
+                <button class="btn mx-1" name="action" value="buy">BUY</button>
+                <button class="btn mx-1" name="action" value="sell">SELL</button>
+              </div>
             </div>
           </form>
 
