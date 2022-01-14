@@ -411,7 +411,7 @@ function toggleOrderbookPanelTables(event) {
         return;
     }
 
-    selectDayOrderTable.classList.toggle('selected');
+    selectIntraDayOrderTable.classList.toggle('selected');
     selectConditionalOrderTable.classList.toggle('selected');
 
     intradayOrderTable.toggle();
