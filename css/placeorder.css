@@ -27,8 +27,6 @@
   height: var(--form-item-height);
 }
 
-label { line-height: var(--form-item-height); }
-
 
 /********************************************************************************
  * Stop order form

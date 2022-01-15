@@ -354,24 +354,25 @@
           </div>
 
           <!-- Order types, each has its own form form. -->
-          <div class="order-type">
-            <div class="order-type-item">
-              <input id="normal-order" name="type" value="normal" type="radio" checked/>
-              <label for="normal-order">Normal Order</label>
+          <fieldset class="d-flex justify-content-between align-items-center mb-3">
+            <legend class="col-form-label">Order Type:</legend>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="order-type" id="normal-order" class="form-check-input" checked/>
+              <label class="form-check-label" for="normal-order">Normal</label>
             </div>
-            <div class="order-type-item">
-              <input id="stop-order" name="type" value="stop" type="radio" />
-              <label for="stop-order">Stop Order</label>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="order-type" id="stop-order" class="form-check-input"/>
+              <label class="form-check-label" for="stop-order">Stop</label>
             </div>
-            <div class="order-type-item">
-              <input id="trailing-order" name="type" value="trailing" type="radio" disabled/>
-              <label for="trailing-order">Trailing Order</label>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="order-type" id="trailing-order" class="form-check-input" disabled/>
+              <label class="form-check-label" for="trailing-order">Trailing</label>
             </div>
-            <div class="order-type-item">
-              <input id="oso-order" name="type" value="oso" type="radio" disabled/>
-              <label for="oso-order">OSO Order</label>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="order-type" id="oso-order" class="form-check-input" disabled/>
+              <label class="form-check-label" for="oso-order">OSO</label>
             </div>
-          </div>
+          </fieldset>
 
           <!-- The forms below each has 2 submit buttons: Buy, Sell.
           They have the same name attribute. Upon submission, the server
