@@ -19,13 +19,11 @@
 }
 
 /* White background already, so text must be black */
-select, option, input {
+#placeorder input, #placeorder select, #placeorder option {
   color: initial;
 }
 
-input:not([type=radio]), select, option {
-  border-radius: 4px;
-  outline: none;
+#placeorder input:not([type=radio]), #placeorder select, #placeorder option {
   height: var(--form-item-height);
 }
 
