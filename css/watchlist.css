@@ -1,7 +1,5 @@
 th > span {
-  display: inline-block;
-  text-align: center;
-  min-width: 16px;
+  min-width: 17px;
 }
 
 .positive {
