@@ -23,7 +23,7 @@
   color: initial;
 }
 
-#placeorder input:not([type=radio]), #placeorder select, #placeorder option {
+#placeorder input:not([type=radio]):not([type=checkbox]), #placeorder select, #placeorder option {
   height: var(--form-item-height);
 }
 
