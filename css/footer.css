@@ -30,7 +30,6 @@ So #watchlist-table is used instead. */
  ********************************************************************************/
 
 footer {
-  display: flex;
   background-color: rgb(16, 19, 26);
 }
 

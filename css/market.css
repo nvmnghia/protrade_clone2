@@ -1,14 +1,8 @@
-#market {
-  display: flex;
-  flex-direction: column;
-}
-
 #market-chart-box {
   flex: 1;
 }
 
 #market-menu {
-  display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 30px;

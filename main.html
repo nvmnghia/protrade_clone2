@@ -17,14 +17,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
   </head>
   <body class="container-fluid h-100 d-flex flex-column">
-    <header>
+    <header class="d-flex">
       <img src="assets/pt_trial.a0934fd1.svg" alt="logo">
 
       <!-- Header content -->
       <div>
         <!-- Header clock -->
         <div id="vn-clock" class="pe-4">
-          <span id="vn-time" class="color-primary fw-bold">10:10:10</span>
+          <span id="vn-time" class="d-inline-block color-primary fw-bold">10:10:10</span>
           <span id="vn-date" class="color-primary">2022/2/2</span>
         </div>
 
@@ -59,7 +59,7 @@
         </div>
 
         <!-- Account menu -->
-        <div id="account-menu">
+        <div id="account-menu" class="d-flex">
           <div>TRIAL VERSION</div>
           <div id="upgrade-account" class="badge">
             <a href="/upgrade.html" class="text-white fw-normal">Upgrade Account</a>
@@ -99,13 +99,13 @@
         ></iframe>
 
         <!-- Market chart -->
-        <div id="market">
+        <div id="market" class="d-flex flex-column">
           <iframe
             id="market-chart-box"
             title="Leader - Lagger chart"
             src="https://mkw.vndirect.com.vn/leader_lagger?color=gray"
           ></iframe>
-          <ul id="market-menu" class="no-bullet bd-top mb-0">
+          <ul id="market-menu" class="d-flex no-bullet bd-top mb-0">
             <li id="market-intraday" role="button">INTRADAY</li>
             <li id="market-vn30" role="button">VN30</li>
             <li id="market-leader-lagger" class="selected" role="button"><i class="fa-solid fa-chart-bar"></i></li>
@@ -215,7 +215,7 @@
                 <th scope="col">Price</th>
                 <th scope="col">
                   <i class="fa-solid fa-caret-left" role="button"></i>
-                  <span>+/-</span>
+                  <span class="d-inline-block">+/-</span>
                   <i class="fa-solid fa-caret-right" role="button"></i>
                 </th>
                 <th scope="col">Spread</th>
@@ -239,7 +239,7 @@
       </div>
       <div id="col3" class="col-md-2 px-0 d-flex flex-column">
         <div id="management" class="flex-grow-1">
-          <div id="panel-title">
+          <div id="panel-title" class="d-flex">
             <!-- Refresh or close the panel -->
             <div id="panel-control">
               <i id="panel-refresh" class="fa-solid fa-rotate" role="button"></i>
@@ -524,7 +524,7 @@
       </div>
     </div>
 
-    <footer class="row mx-0">
+    <footer class="d-flex row mx-0">
       <!-- TODO: consistent naming scheme for selector & content -->
       <!-- TODO: flex-grow not working? -->
       <div id="select-orderbook" class="col selected" role="button">Orderbook</div>

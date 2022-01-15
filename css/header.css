@@ -3,8 +3,6 @@
  ********************************************************************************/
 
 header {
-  display: flex;
-
   height: 42px;
 }
 
@@ -34,7 +32,6 @@ img {
 
 /* Fix width of #vn-time when value changes */
 #vn-time {
-  display: inline-block;
   min-width: 63px;    /* Assume the longest string is 08:48:48 */
 }
 
@@ -72,7 +69,6 @@ header nav li a {
 
 #account-menu {
   margin-left: auto;
-  display: flex;
   align-items: center;
 }
 
