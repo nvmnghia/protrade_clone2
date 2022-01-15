@@ -10,12 +10,6 @@ header > * {
   padding: 0 10px;
 }
 
-header > a {
-  display: block;
-  height: 100%;
-  width: 200px;
-}
-
 img {
   max-height: 100%;
 }
