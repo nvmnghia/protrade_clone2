@@ -1,10 +1,4 @@
-#market-chart-box {
-  flex: 1;
-}
-
 #market-menu {
-  justify-content: flex-end;
-  align-items: center;
   height: 30px;
   background-color: rgb(16, 19, 26);
 }

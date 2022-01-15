@@ -2,15 +2,6 @@
  * Panel title bar
  ********************************************************************************/
 
-#panel-title {
-  align-items: center;
-}
-
-#panel-title-content {
-  order: -1;
-  flex: 1;
-}
-
 #panel-control > i {
   padding-right: 10px;
   line-height: 30px;
