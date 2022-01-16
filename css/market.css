@@ -1,5 +1,5 @@
 #market-menu {
-  height: 30px;
+  height: var(--footer-height);
   background-color: rgb(16, 19, 26);
 }
 
