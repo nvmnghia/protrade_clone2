@@ -53,7 +53,6 @@ header nav li a {
 
 #upgrade-account {
   background-color: var(--primary);
-  margin: 0 20px;
 }
 
 #my-account {
@@ -89,8 +88,4 @@ header nav li a {
 
 #my-account .drop-down-menu > li:hover > * {
   color: var(--primary);
-}
-
-#user-fullname {
-  padding: 0 5px;
 }
