@@ -12,6 +12,7 @@ In other words, other elements move to creates room for footer. */
 }
 
 /* #col3 hidden */
+/* TODO: abs not exist, max not popular, do this abs(col3-col2) in SASS perhaps? */
 #market-menu.col3-hidden {
   padding-right: 50px !important;
 }

@@ -21,16 +21,24 @@ html {
   height: 100%;
 }
 
+/* TODO: consider fixed for mobile layout */
+:root {
+  --col2-width: 350px;
+  --col3-width: 400px;
+  --header-height: 42px;
+  --footer-height: 30px;
+}
+
 #col1 {
   flex: 1;
 }
 
 #col2 {
-  width: 350px;
+  width: var(--col2-width);
 }
 
 #col3 {
-  width: 400px;
+  width: var(--col3-width);
 }
 
 /* Margins */
@@ -56,12 +64,6 @@ html {
   flex: 2;
 }
 
-/* TODO: consider fixed for mobile layout */
-:root {
-  --header-height: 42px;
-  --footer-height: 30px;
-}
-
 header {
   height: var(--header-height);
 }
@@ -71,7 +73,7 @@ footer {
   right: 0;
   bottom: 0;
 
-  width: 400px;
+  width: var(--col3-width);
   height: var(--footer-height);
 }
 
