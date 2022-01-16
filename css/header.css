@@ -47,10 +47,6 @@ header nav li a {
  * Account menu
  ********************************************************************************/
 
-#account-menu {
-  margin-left: auto;
-}
-
 #upgrade-account {
   background-color: var(--primary);
 }
