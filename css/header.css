@@ -2,10 +2,6 @@
  * Basic layout
  ********************************************************************************/
 
-header {
-  height: 42px;
-}
-
 header > * {
   padding: 0 10px;
 }
@@ -61,7 +57,7 @@ header nav li a {
 }
 
 #my-account {
-  line-height: 42px;
+  line-height: var(--header-height);
 }
 
 #my-account .drop-down-toggle:hover > span {

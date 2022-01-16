@@ -58,8 +58,14 @@ html {
 
 /* TODO: consider fixed for mobile layout */
 :root {
+  --header-height: 42px;
   --footer-height: 30px;
 }
+
+header {
+  height: var(--header-height);
+}
+
 footer {
   position: fixed;
   right: 0;
