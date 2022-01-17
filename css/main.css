@@ -152,25 +152,29 @@ tr {
   color: var(--primary);
 }
 
+:root {
+  --border: 1px solid #444;
+}
+
 /* TODO: replace with BS border */
 .bd {
-  border: 1px solid #444;
+  border: var(--border);
 }
 
 .bd-left {
-  border-left: 1px solid #444;
+  border-left: var(--border);
 }
 
 .bd-right {
-  border-right: 1px solid #444;
+  border-right: var(--border);
 }
 
 .bd-top {
-  border-top: 1px solid #444;
+  border-top: var(--border);
 }
 
 .bd-bottom {
-  border-bottom: 1px solid #444;
+  border-bottom: var(--border);
 }
 
 /* drop-down instead of dropdown to avoid collision with BS down the line */
