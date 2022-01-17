@@ -14,3 +14,23 @@ th > span {
 #watchlist tr:nth-child(even) {
   background-color: #3a3d49;
 }
+
+#watchlist-table th:nth-child(1), #watchlist-table td:nth-child(1) {
+  width: 25%;
+}
+
+#watchlist-table th:nth-child(2), #watchlist-table td:nth-child(2) {
+  width: 18%;
+}
+
+#watchlist-table th:nth-child(3), #watchlist-table td:nth-child(3) {
+  width: 16%;
+}
+
+#watchlist-table th:nth-child(4), #watchlist-table td:nth-child(4) {
+  width: 16%;
+}
+
+#watchlist-table th:nth-child(5), #watchlist-table td:nth-child(5) {
+  width: 25%;
+}
