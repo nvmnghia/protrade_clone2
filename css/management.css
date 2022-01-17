@@ -16,21 +16,21 @@
  * Orderbook
  ********************************************************************************/
 
-/* Day Order table */
-#intraday-order-table th:nth-child(1), #intraday-order-table td:nth-child(1) { width: 13%; }
-#intraday-order-table th:nth-child(2), #intraday-order-table td:nth-child(2) { width: 23%; }
-#intraday-order-table th:nth-child(3), #intraday-order-table td:nth-child(3) { width: 18%; }
-#intraday-order-table th:nth-child(4), #intraday-order-table td:nth-child(4) { width: 15%; }
-#intraday-order-table th:nth-child(5), #intraday-order-table td:nth-child(5) { width: 31%; }
+/* Intraday Order table */
+#intraday-order-table tr > *:nth-child(1) { width: 13%; }
+#intraday-order-table tr > *:nth-child(2) { width: 23%; }
+#intraday-order-table tr > *:nth-child(3) { width: 18%; }
+#intraday-order-table tr > *:nth-child(4) { width: 15%; }
+#intraday-order-table tr > *:nth-child(5) { width: 31%; }
 
 /* Conditional Order table */
-#conditional-order-table th:nth-child(1), #conditional-order-table td:nth-child(1) { width: 12%; }
-#conditional-order-table th:nth-child(2), #conditional-order-table td:nth-child(2) { width: 17%; }
-#conditional-order-table th:nth-child(3), #conditional-order-table td:nth-child(3) { width: 17%; }
-#conditional-order-table th:nth-child(4), #conditional-order-table td:nth-child(4) { width: 12%; }
-#conditional-order-table th:nth-child(5), #conditional-order-table td:nth-child(5) { width: 12%; }
-#conditional-order-table th:nth-child(6), #conditional-order-table td:nth-child(6) { width: 20%; }
-#conditional-order-table th:nth-child(7), #conditional-order-table td:nth-child(7) { width: 10%; }
+#conditional-order-table tr > *:nth-child(1) { width: 12%; }
+#conditional-order-table tr > *:nth-child(2) { width: 17%; }
+#conditional-order-table tr > *:nth-child(3) { width: 17%; }
+#conditional-order-table tr > *:nth-child(4) { width: 12%; }
+#conditional-order-table tr > *:nth-child(5) { width: 12%; }
+#conditional-order-table tr > *:nth-child(6) { width: 20%; }
+#conditional-order-table tr > *:nth-child(7) { width: 10%; }
 
 
 /********************************************************************************
@@ -38,18 +38,18 @@
  ********************************************************************************/
 
 /* Open positions table */
-#open-positions-table th:nth-child(1), #open-positions-table td:nth-child(1) { width: 70px; }
-#open-positions-table th:nth-child(2), #open-positions-table td:nth-child(2) { width: 50px; }
-#open-positions-table th:nth-child(3), #open-positions-table td:nth-child(3) { width: 70px; }
-#open-positions-table th:nth-child(4), #open-positions-table td:nth-child(4) { width: 70px; }
-#open-positions-table th:nth-child(5), #open-positions-table td:nth-child(5) { width: 140px; }
+#open-positions-table tr > *:nth-child(1) { width: 70px; }
+#open-positions-table tr > *:nth-child(2) { width: 50px; }
+#open-positions-table tr > *:nth-child(3) { width: 70px; }
+#open-positions-table tr > *:nth-child(4) { width: 70px; }
+#open-positions-table tr > *:nth-child(5) { width: 140px; }
 
 /* Closing positions table */
-#closing-positions-table th:nth-child(1), #closing-positions-table td:nth-child(1) { width: 80px; }
-#closing-positions-table th:nth-child(2), #closing-positions-table td:nth-child(2) { width: 60px; }
-#closing-positions-table th:nth-child(3), #closing-positions-table td:nth-child(3) { width: 80px; }
-#closing-positions-table th:nth-child(4), #closing-positions-table td:nth-child(4) { width: 80px; }
-#closing-positions-table th:nth-child(5), #closing-positions-table td:nth-child(5) { width: 100px; }
+#closing-positions-table tr > *:nth-child(1) { width: 80px; }
+#closing-positions-table tr > *:nth-child(2) { width: 60px; }
+#closing-positions-table tr > *:nth-child(3) { width: 80px; }
+#closing-positions-table tr > *:nth-child(4) { width: 80px; }
+#closing-positions-table tr > *:nth-child(5) { width: 100px; }
 
 
 /********************************************************************************
