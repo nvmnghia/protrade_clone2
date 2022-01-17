@@ -148,10 +148,6 @@ tr {
  * Utils
  ********************************************************************************/
 
-.no-bullet {
-  list-style: none;
-}
-
 .color-primary {
   color: var(--primary);
 }
