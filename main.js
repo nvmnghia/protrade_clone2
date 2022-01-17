@@ -503,19 +503,15 @@ function selectManagementPanels(event) {
 }
 
 function hideCol3() {
-    hide(document.getElementById('col3'));
-    document.getElementById('market-menu').classList.add('col3-hidden');
-    document.getElementById('watchlist').classList.add('col3-hidden');
+    document.querySelector('body').classList.add('col3-hidden');
 
-    // Clear selected menu item
+    // Clear selected footer menu item
     document.querySelectorAll('footer > div')
         .forEach(menuItem => menuItem.classList.remove('selected'));
 }
 
 function showCol3() {
-    show(document.getElementById('col3'));
-    document.getElementById('market-menu').classList.remove('col3-hidden');
-    document.getElementById('watchlist').classList.remove('col3-hidden');
+    document.querySelector('body').classList.remove('col3-hidden');
 }
 
 function setupMinimizeCol3() {

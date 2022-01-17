@@ -39,6 +39,7 @@ html {
 
 #col3 {
   width: var(--col3-width);
+  padding-bottom: var(--footer-height) !important;
 }
 
 /* Margins */
@@ -75,6 +76,34 @@ footer {
 
   width: var(--col3-width);
   height: var(--footer-height);
+}
+
+
+/********************************************************************************
+ * #col3 hidden
+ ********************************************************************************/
+
+/* To enable this layout, set .col3-hidden on <body>
+
+The general idea is that footer always stays the same (size, position).
+In other words, other elements move to creates room for footer. */
+
+.col3-hidden #col3 {
+  display: none !important;
+}
+
+.col3-hidden #market-menu {
+  padding-right: max(
+    calc(var(--col2-width) - var(--col3-width)),
+    calc(var(--col3-width) - var(--col2-width))
+  ) !important;
+}
+
+/* Due to flex sizing, padding & margin for #watchlist can't be used here, as it
+would affect the height of both #watchlist and #history. So #watchlist-table is
+used instead. */
+.col3-hidden #watchlist-table {
+  margin-bottom: var(--footer-height) !important;
 }
 
 
