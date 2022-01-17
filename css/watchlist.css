@@ -1,5 +1,5 @@
-th > span {
-  min-width: 17px;
+#watchlist th > span {
+  min-width: 20px;
 }
 
 .positive {
