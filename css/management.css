@@ -2,9 +2,12 @@
  * Panel title bar
  ********************************************************************************/
 
+#panel-title {
+  height: 30px;
+}
+
 #panel-control > i {
   padding-right: 10px;
-  line-height: 30px;
 }
 
 #panel-control > i:hover {
@@ -62,7 +65,6 @@
 
 #panel-title-assets {
   padding-left: var(--assets-pad);
-  line-height: 30px;
 }
 
 #panel-title-assets * {
