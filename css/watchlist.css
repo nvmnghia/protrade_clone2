@@ -11,8 +11,8 @@
 }
 
 /* TODO: do this in SASS, as it is .gray-tr */
-#watchlist tr:nth-child(even) {
-  background-color: #3a3d49;
+#watchlist-table > tbody > tr:nth-child(even) {
+  background-color: var(--stripped-row);
 }
 
 #watchlist-table tr > *:nth-child(1) { width: 25%; }

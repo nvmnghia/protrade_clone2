@@ -132,12 +132,9 @@ body {
  * Table
  ********************************************************************************/
 
-.gray-tr {
-  background-color: #3a3d49;
-}
-
 table {
   width: 100%;
+  --stripped-row: #3a3d49;
 }
 
 table * {
